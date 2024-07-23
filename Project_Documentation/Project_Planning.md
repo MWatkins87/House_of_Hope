@@ -84,8 +84,8 @@ Communications, SAMHSA, U.S. Department of Health and Human Services.
 
 ## Model Evaluation
 
-- Model 1
-- Model 2
+- Multi-Layer Perceptron (MLP)
+- Gradient Boosting Machines (GBMs) with Neural Network Backbones:
 - Model 3
 
 ## Model Optimization
