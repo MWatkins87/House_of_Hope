@@ -1,6 +1,7 @@
-# House_of_Hope
+# HOUSE OF HOPE
 Predictive Recovery: Data-Driven Drug and Alcohol Rehab with Correlation Matrices
-## Abstract
+
+## ABSTRACT
 
 This project aims to enhance the success rates of addiction and recovery treatment programs at facilities like the Green County House of Hope. Currently, only 42.1% of residents at the House of Hope complete their treatment programs. By identifying and analyzing key factors that influence completion rates, the project seeks to direct limited resources towards residents most likely to successfully complete the program.
 
@@ -10,7 +11,7 @@ Previous models developed for the House of Hope employed various machine learnin
 
 The Green County House of Hope also plans to expand its operations to include services for men. To support this expansion, the project will leverage the Substance Abuse and Mental Health Data Archive dataset, which includes data on male residents. By sorting the data by gender, the project will enable more accurate predictions for the current female resident population and future male residents.
 
-## Green County House of Hope Background
+## GREEN COUNTY HOUSE OF HOPE BACKGROUND
 
 The Green County House of Hope was established in 2020 by Paul Watkins, a former jail chaplain who also served at the Green County Drug Court in Monroe, Wisconsin. Watkins founded the House of Hope with the vision of providing women a safe and stable environment for recovery from addiction, free from the triggers that might cause a relapse.
 
@@ -22,7 +23,7 @@ The House of Hope is designed to support a maximum of four women simultaneously,
 
 While many drug and alcohol rehabilitation programs have success rates of just 10%, the Green County House of Hope stands out with results exceeding four times that of typical programs. This remarkable success can be attributed to its small, personalized approach, which allows for intensive, individualized support. To further enhance their effectiveness, the House of Hope is planning to incorporate a data-driven component into their selection process. This will enable them to identify and select residents who are most likely to benefit from the program, thereby optimizing their resources and improving overall outcomes.
 
-## SAMHSA Dataset
+## SAMHSA DATASET
 
 https://www.samhsa.gov/data/data-we-collect/samhda-substance-abuse-and-mental-health-data-archive samhsa.gov Substance Abuse and Mental Health Data Archive Get Access: NSDUH Restricted-use Data SAMHSA has partnered with the National Center for Health Statistics (NCHS) to host restricted-use National Survey on Drug Use and Health (NSDUH) data at their Federal Statistical Research Data Centers (RDCs). RDCs are secure facilities that provide access to a range of restricted-use microdata for statistical purposes. SAMHSA is the most recent federal partner to work with NCHS in making NSDUH restricted-use microdata available to approved researchers at RDC sites.
 
@@ -36,7 +37,7 @@ Public Domain Notice
 
 All material appearing in this document is in the public domain and may be reproduced or copied without permission from SAMHSA. Citation of the source is appreciated. This publication may not be reproduced or distributed for a fee without specific, written authorization of the Office of Communications, SAMHSA, U.S. Department of Health and Human Services.
 
-## SAMHSA Dataset Codebook
+## SAMHSA DATASET CODEBOOK
 
 > DISYR: Year of discharge
 > AGE: Age at Admission
@@ -105,7 +106,7 @@ All material appearing in this document is in the public domain and may be repro
 > FREQ_ATND_SELF_HELP: Attendance at substance use self help groups in 30 days prior to admission
 > FREQ_ATND_SELF_HELP_D: Attendatce at substance use self help groups at discharge
 
-## Data Cleaning and Preparation
+## DATA CLEANING AND PREPARATION
 
 All variables in the dataset were encoded as integers corresponding to specific values, as demonstrated in the example of the target column "REASON" detailed below. Missing values in the dataset were coded as -9.
 
@@ -137,13 +138,106 @@ Based on the input of the House of Hope, all null values were changed to "0" wit
 > PSOURCE: 1- "Individual"
 > ROUTE1: 5- "Other"
 > FRSTUSE1, FRSTUSE2, FRSTUSE3: 3- "15-17 years"
-> SUB1, SUB2, SUB3: 19- "Other drugs"
+> SUB1, SUB2, SUB3, SUB1_D, SUB2_D, SUB3_D: 19- "Other drugs"
 > DSMCRT: 5- "Opiod Dependence"
 > PSYPROB: 1- "Yes"
 > PRIMPAY: 1 - "Self-pay"
-> FREQ_ATND_SELF_HELP: 3- "4-7 times in the past month"
+
+Most importantly, House of Hope wanted to change the values of the variables of SUB1, SUB2, SUB3 and SUB1_D, SUB2_D, SUB3_D from the actual drugs that the perspective resident had been using and recode them as what they perceived to be "a success" and what they deemed to be "a failure".  House of Hope was unconcerned if a hard drug user continued to drink or take prescription drugs and would consider those case to be successful.  As such these values were changed to "1 -success"
+
+> 2- alcohol
+> 12- Other stimulants
+> 13- Benzodiazepines
+> 14- Other tranquilizers
+> 16- Other sedatives
+> 18- Over-the-counter drugs
+
+All other values were changed "0- failure".
+
+Similarly, the values in the target column, "REASON" were converted to pass/fail in order to predict a binary. These two values were converted to "1- pass":
+
+> 1- Treatment completed
+> 4- transfered to another facility
+
+These values were converted to "0- fail":
+
+> 2- Dropped out of treatment
+> 3- Terminated by facility
+> 5- Incarcerated
+> 6- Death
+> 7- Other
 
 The target column was dropped, and the dataset was split into training and test sets with an 80/20 ratio. The training data was then scaled using StandardScaler and prepared for model training.
 
-#Summary of Initial Machine Learning Model
+## SUMMARY OF INITIAL MACHINE LEARNING MODELS
+
+Correlation coefficents were generated for all of the dimensions in the dataset with the target column generating the following results.
+
+> MARSTAT                0.138023
+> FRSTUSE1               0.139035
+> VET                    0.144566
+> SERVICES_D             0.152773
+> SERVICES               0.154441
+> IDU                    0.155722
+> ROUTE1                 0.165564
+> EMPLOY                 0.177870
+> FREQ_ATND_SELF_HELP    0.183493
+> SUB1                   0.191675
+> EDUC                   0.193754
+> LIVARAG_D              0.206890
+> EMPLOY_D               0.208258
+> LIVARAG                0.209302
+> ARRESTS_D              0.209523
+> ARRESTS                0.209631
+> FREQ1_D                0.214312
+>SUB1_D                 0.243122
+> REASON                 1.000000
+
+Intutitively, the type and frequency of the drug of choice once the person was discharged were the primary model predicters. Also, clients who had been arrested and are presumptively on a court appointed drug treatment program have a high predictive value as well as the stablity of the client's living and employment situation.
+
+The twenty dimensions were used to train five models with the following results:
+
+> Model: LinearRegression
+> Train score: 0.1937139216941649
+> Test Score: 0.19216585243099527
+
+> Model: KNeighborsRegressor
+> Train score: 0.5378006263686466
+> Test Score: 0.29855960172606644
+
+> Model: RandomForestRegressor
+> Train score: 0.927633723215378
+> Test Score: 0.481623989699713
+
+> Model: ExtraTreesRegressor
+> Train score: 1.0
+> Test Score: 0.4840360094581453
+
+> Model: AdaBoostRegressor
+> Train score: 0.07484674836756333
+> Test Score: 0.07385510906138937
+
+Following the optimization of the model, a meeting was held with House of Hope to discuss the initial correlations and design the intake questionnaire. The aim was to develop a final dataset for model training and identify the key data to be collected in the intake questionnaire. Many of the fields that were used in the final version of the model would be included in the final training of the model were variables that were collected at discharge and could not be included in the questionnaire. Furthermore, House of Hope chose to collect demographic information such as AGE, RACE and ETHNICITY that did not show great correlation with the target variable.
+
+The final fields used in the creation of the model and the Python-based questionnaire were: "MARSTAT," "EMPLOY," "LIVARAG," "DAYWAIT," "SERVICES," "REASON," "FRSTUSE1," "FREQ_ATND_SELF_HELP_D," "PRIMPAY," "DIVISION," "PREG," and "METHUSE."
+
+The questionnaire was created using a Python-based widget designed to collect information for predicting a client's outcome.
+
+## HOUSE OF HOPE DEEP NEURAL NETWORK DATA PREPARATION
+
+In the second phase of the project, the dataset was reevaluated, and it was decided to include all the initial data fields. This was done to determine if the Multi-Layer Perceptron or the Deep Neural Network could detect subtle patterns that might improve model accuracy, previously considered as noise by the machine learning models.
+
+Additionally, due to the high correlation of the SUB1, SUB2, SUB3, and SUB1_D, SUB2_D, SUB3_D variables, significant changes to these columns were reassessed. In the previous model, the values in these variables were changed from the specific drug causing dependence to a "1" if House of Hope deemed the outcome a success (such as alcohol abuse or over-the-counter prescription use) or a "0" if deemed a failure (such as opioid or methamphetamine use). It was concluded that these changes might not have been interpreted as intended by the model, and that the original values could have higher predictive value.
+
+## INTAKE QUESTIONNAIRE AND ETHICAL CONSIDERATIONS OF PREDICTIVE DRUG REHABILITATION OUTCOMES
+
+The House of Hope study also addressed the ethical considerations of using data for admission to drug rehabilitation programs, recognizing that many variables predicting successful outcomes are beyond the client's control. It is essential to determine what is fair to use in predicting a client's outcome.
+
+Certain variables, such as race, gender, ethnicity, and age, may be legally prohibited from being used to predict outcomes, despite their demonstrated predictive significance.
+
+Other variables, like pregnancy, are easier to evaluate ethically. Although prioritizing pregnant clients might seem to penalize men or non-pregnant women, it can be justified by the need to protect the unborn child, an innocent life affected without fault of their own.
+
+However, some variables are not as easily justifiable. It is questionable whether it is ethical to deny a client treatment because the drug they are dependent on has a lower probability of recovery. Similarly, prioritizing the recovery of a client in a court-ordered drug program over someone motivated to recover voluntarily raises ethical concerns.
+
+In discussions with House of Hope, it was decided that using filters might mitigate these ethical concerns. By comparing residents with similar demographic profiles rather than the entire dataset, ethical issues in prioritizing residents using data models can be addressed more effectively.
 
