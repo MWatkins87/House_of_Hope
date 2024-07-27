@@ -197,25 +197,25 @@ Intutitively, the type and frequency of the drug of choice once the person was d
 
 The twenty dimensions were used to train five models with the following results:
 
-* Model: LinearRegression
-* Train score: 0.1937139216941649
-* Test Score: 0.19216585243099527
+**Model: LinearRegression**
+Train score: 0.1937139216941649
+Test Score: 0.19216585243099527
 
-* Model: KNeighborsRegressor
-* Train score: 0.5378006263686466
-* Test Score: 0.29855960172606644
+**Model: KNeighborsRegressor**
+Train score: 0.5378006263686466
+Test Score: 0.29855960172606644
 
-* Model: RandomForestRegressor
-* Train score: 0.927633723215378
-* Test Score: 0.481623989699713
+**Model: RandomForestRegressor**
+Train score: 0.927633723215378
+Test Score: 0.481623989699713
 
-* Model: ExtraTreesRegressor
-* Train score: 1.0
-* Test Score: 0.4840360094581453
+**Model: ExtraTreesRegressor**
+Train score: 1.0
+Test Score: 0.4840360094581453
 
-* Model: AdaBoostRegressor
-* Train score: 0.07484674836756333
-* Test Score: 0.07385510906138937
+**Model: AdaBoostRegressor**
+Train score: 0.07484674836756333
+Test Score: 0.07385510906138937
 
 Following the optimization of the model, a meeting was held with House of Hope to discuss the initial correlations and design the intake questionnaire. The aim was to develop a final dataset for model training and identify the key data to be collected in the intake questionnaire. Many of the fields that were used in the final version of the model would be included in the final training of the model were variables that were collected at discharge and could not be included in the questionnaire.
 
@@ -245,4 +245,10 @@ In discussions with House of Hope, it was decided that using filters might mitig
 
 Filters were created for each of the variables in the dataset: MARSTAT", "EMPLOY", "LIVARAG", "DAYWAIT", "SERVICES", "FRSTUSE1", "FREQ_ATND_SELF_HELP_D", "PRIMPAY", "DIVISION", "PREG", "METHUSE".  A filtered data set was created with selection of values from each variable to investigate whether there was a significant change in the correlation coeffients in the new data set to justify the use of filters.
 
-## SUMMARY OF MULTI-LAYER PERCEPTRON AND DEEP NEURAL NETWORK MODELS
+## MULTI-LEVEL PERCEPTRON MODEL
+
+Once the data set had been processed and ready for training, a multi-layer perceptron model and deep neural network model were created.
+
+## DEEP NEURAL NETWORK
+
+## GRADIENT BOOST MACHINE MODEL
