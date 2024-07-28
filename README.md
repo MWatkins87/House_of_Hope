@@ -13,7 +13,7 @@ The Green County House of Hope also plans to expand its operations to include se
 
 ## GREEN COUNTY HOUSE OF HOPE BACKGROUND
 
-![House of Hope](House_of_Hope/Images/house_of_hope.jpeg)
+![House of Hope](/Images/house_of_hope.jpeg)
 
 The Green County House of Hope was established in 2020 by Paul Watkins, a former jail chaplain who also served at the Green County Drug Court in Monroe, Wisconsin. Watkins founded the House of Hope with the vision of providing women a safe and stable environment for recovery from addiction, free from the triggers that might cause a relapse.
 
