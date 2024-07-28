@@ -13,6 +13,8 @@ The Green County House of Hope also plans to expand its operations to include se
 
 ## GREEN COUNTY HOUSE OF HOPE BACKGROUND
 
+![House of Hope](House_of_Hope-main/Images/house_of_hope.jpg)
+
 The Green County House of Hope was established in 2020 by Paul Watkins, a former jail chaplain who also served at the Green County Drug Court in Monroe, Wisconsin. Watkins founded the House of Hope with the vision of providing women a safe and stable environment for recovery from addiction, free from the triggers that might cause a relapse.
 
 To be considered for residency, prospective residents must be at least 18 years old and have been in recovery for a minimum of 90 days. The selection process involves an interview with the House of Hope Committee, which evaluates candidates and selects women to join the program.
@@ -245,10 +247,233 @@ In discussions with House of Hope, it was decided that using filters might mitig
 
 Filters were created for each of the variables in the dataset: MARSTAT", "EMPLOY", "LIVARAG", "DAYWAIT", "SERVICES", "FRSTUSE1", "FREQ_ATND_SELF_HELP_D", "PRIMPAY", "DIVISION", "PREG", "METHUSE".  A filtered data set was created with selection of values from each variable to investigate whether there was a significant change in the correlation coeffients in the new data set to justify the use of filters.
 
-## MULTI-LEVEL PERCEPTRON MODEL
+## MULTI-LEVEL PERCEPTRON (MLP) MODEL
 
-Once the data set had been processed and ready for training, a multi-layer perceptron model and deep neural network model were created.
+Understanding the Multilayer Perceptron (MLP) model is fundamental in neural networks and deep learning. MLP is a type of artificial neural network (ANN) that consists of multiple layers of nodes (neurons) with each layer fully connected to the next one. Here's a detailed overview to help you grasp the concept better.
+Key Concepts of MLP
+1. Structure of MLP
+Input Layer: The first layer that receives the input data. Each node in this layer represents a feature in the input data.
+Hidden Layers: Intermediate layers between the input and output layers. These layers perform computations and learn the representations of the input data.
+Output Layer: The final layer that produces the prediction or classification result. The number of nodes in this layer depends on the nature of the task (e.g., one node for binary classification, multiple nodes for multi-class classification).
+2. Activation Functions
+Activation functions introduce non-linearity into the network, enabling it to learn complex patterns.
+Sigmoid: σ(x)=11+e−x\sigma(x) = \frac{1}{1 + e^{-x}}σ(x)=1+e−x1​
+ReLU (Rectified Linear Unit): ReLU(x)=max⁡(0,x)\text{ReLU}(x) = \max(0, x)ReLU(x)=max(0,x)
+Tanh: tanh⁡(x)=ex−e−xex+e−x\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}tanh(x)=ex+e−xex−e−x​
+3. Forward Propagation
+In forward propagation, the input data is passed through the network layer by layer. Each neuron calculates a weighted sum of its inputs, applies the activation function, and passes the result to the next layer.
+4. Backpropagation
+Backpropagation is the process of training the network. It involves:
+Calculating the Loss: Using a loss function (e.g., Mean Squared Error for regression, Cross-Entropy for classification) to measure the difference between the predicted and actual values.
+Computing Gradients: Determining the gradients of the loss function with respect to the weights.
+Updating Weights: Adjusting the weights using optimization algorithms like Gradient Descent to minimize the loss.
+5. Training the MLP
+Training involves multiple iterations (epochs) where forward and backpropagation steps are repeated, continuously improving the model’s weights to minimize the loss.
 
-## DEEP NEURAL NETWORK
+Step 1: Import Libraries
+python
+
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+Step 2: Load and Preprocess the Data
+python
+
+# Load the dataset
+data = pd.read_csv('data.csv')
+
+# Separate features and target
+X = data.drop('target', axis=1)
+y = data['target']
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Standardize the features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+Step 3: Initialize and Train the MLP
+python
+
+# Initialize the MLPClassifier
+mlp = MLPClassifier(hidden_layer_sizes=(100,), activation='relu', solver='adam', max_iter=300, random_state=42)
+
+# Train the model
+mlp.fit(X_train, y_train)
+Step 4: Evaluate the Model
+python
+
+# Make predictions
+y_pred = mlp.predict(X_test)
+
+# Evaluate the model
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+Explanation of the Code
+Data Preprocessing: The dataset is loaded and split into training and testing sets. Features are standardized using StandardScaler.
+MLP Initialization: An MLPClassifier is initialized with one hidden layer of 100 neurons, ReLU activation function, and Adam optimizer.
+Training: The model is trained on the training data using the fit method.
+Evaluation: The model's performance is evaluated on the test data using a confusion matrix and classification report.
+Key Points to Remember
+Hyperparameters: MLP has several hyperparameters (e.g., number of hidden layers, number of neurons, learning rate) that significantly affect its performance. Tuning these hyperparameters is crucial.
+Overfitting: MLP can overfit, especially with a small dataset or too many neurons. Techniques like dropout and regularization can help prevent overfitting.
+Computational Cost: Training deep networks can be computationally expensive. Efficient use of resources and optimization techniques is essential.
+MLPs are powerful models for various tasks, from simple binary classification to complex image and speech recognition problems. Understanding the structure and training process is crucial for effectively applying and tuning these models.
+
+# MLP Statistical Analysis
+
+Accuracy: 0.81
+              precision    recall  f1-score   support
+
+           0       0.77      0.68      0.72    708990
+           1       0.83      0.88      0.85   1223451
+
+    accuracy                           0.81   1932441
+   macro avg       0.80      0.78      0.79   1932441
+weighted avg       0.81      0.81      0.81   1932441
+
+## TensorFlow/Keras model
+
+ensorFlow and Keras are popular frameworks for building and training neural networks. Keras is a high-level API that runs on top of TensorFlow, making it easier to build and train models. Let's break down the basics of using TensorFlow and Keras to build neural networks, particularly focusing on the core concepts and providing a simple example.
+Key Concepts of TensorFlow/Keras Models
+Layers: The building blocks of neural networks. Common layers include Dense (fully connected), Conv2D (convolutional), LSTM (recurrent), etc.
+Models: Composed of layers. In Keras, there are two main types of models:
+Sequential Model: A linear stack of layers.
+Functional API: More flexible, allows building complex models (e.g., multi-input, multi-output).
+Compilation: Configuring the model with loss functions, optimizers, and metrics.
+Training: Using the fit method to train the model on data.
+Evaluation: Using the evaluate method to assess the model's performance.
+Prediction: Using the predict method to make predictions on new data.Building and Training a Simple Neural Network with Keras
+
+Step 1: Import Libraries
+python
+
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import classification_report
+Step 2: Load and Preprocess Data
+python
+
+# Example: Load the dataset
+data = pd.read_csv('data.csv')
+
+# Separate features and target
+X = data.drop('target', axis=1)
+y = data['target']
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Standardize the features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+Step 3: Build the Model
+python
+
+# Initialize the Sequential model
+model = Sequential()
+
+# Add layers
+model.add(Dense(32, activation='relu', input_shape=(X_train.shape[1],)))
+model.add(Dense(16, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))  # Sigmoid activation for binary classification
+Step 4: Compile the Model
+python
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+Step 5: Train the Model
+python
+
+history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
+Step 6: Evaluate the Model
+python
+
+
+Note: The model initially utilize a categorical_crossentropy optimizer that was replace by a binary_crossentropy optimizer with the hypothesis that the binary optimizer would provide better accuracy; however, the binary optimizer resulted in a 20 point drop in accuracy.  As a result, the final model utilizes a categorical_crossentropy optimizer.
+
+# Evaluate on the test set
+test_loss, test_accuracy = model.evaluate(X_test, y_test)
+print(f'Test Loss: {test_loss}')
+print(f'Test Accuracy: {test_accuracy}')
+
+# Make predictions
+y_pred = (model.predict(X_test) > 0.5).astype("int32")
+
+# Print classification report
+print(classification_report(y_test, y_pred))
+Explanation of the Code
+Data Preprocessing: The dataset is loaded, features and target are separated, and data is split into training and test sets. Features are standardized using StandardScaler.
+Model Building: A Sequential model is initialized, and layers are added. The first layer specifies input_shape, and the final layer uses a sigmoid activation function for binary classification.
+Compilation: The model is compiled with the Adam optimizer, binary cross-entropy loss function, and accuracy metric.
+Training: The model is trained on the training data using the fit method, with a validation split to monitor performance on validation data.
+Evaluation: The model's performance is evaluated on the test set using the evaluate method. Predictions are made on the test set, and a classification report is printed.
+Key Points to Remember
+Epochs and Batch Size: These hyperparameters control the training process. An epoch is one complete pass through the training data, while batch size determines the number of samples processed before updating the model's weights.
+Validation Split: Part of the training data is used for validation to monitor the model's performance on unseen data during training.
+Activation Functions: Different activation functions are used for different layers. ReLU is commonly used for hidden layers, while sigmoid is used for binary classification in the output layer.
+Additional Resources
+To learn more about TensorFlow and Keras, consider exploring the following resources:
+TensorFlow Documentation
+Keras Documentation
+Deep Learning with Python by François Chollet
+
+# Tensorflow/Keras Statistical Results
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ dense_6 (Dense)                 │ (None, 100)            │         6,900 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_7 (Dense)                 │ (None, 50)             │         5,050 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_8 (Dense)                 │ (None, 3)              │           153 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+
+ Total params: 12,103 (47.28 KB)
+ Trainable params: 12,103 (47.28 KB)
+ Non-trainable params: 0 (0.00 B)
+Epoch 1/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 167s 1ms/step - accuracy: 0.7800 - loss: 0.4443 - val_accuracy: 0.8032 - val_loss: 0.4045
+Epoch 2/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 154s 1ms/step - accuracy: 0.8057 - loss: 0.4010 - val_accuracy: 0.8079 - val_loss: 0.3987
+Epoch 3/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 162s 1ms/step - accuracy: 0.8094 - loss: 0.3949 - val_accuracy: 0.8094 - val_loss: 0.3949
+Epoch 4/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 156s 1ms/step - accuracy: 0.8119 - loss: 0.3918 - val_accuracy: 0.8113 - val_loss: 0.3921
+Epoch 5/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 158s 1ms/step - accuracy: 0.8130 - loss: 0.3902 - val_accuracy: 0.8115 - val_loss: 0.3927
+Epoch 6/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 151s 1ms/step - accuracy: 0.8130 - loss: 0.3892 - val_accuracy: 0.8123 - val_loss: 0.3913
+Epoch 7/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 160s 1ms/step - accuracy: 0.8140 - loss: 0.3889 - val_accuracy: 0.8130 - val_loss: 0.3898
+Epoch 8/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 157s 1ms/step - accuracy: 0.8142 - loss: 0.3879 - val_accuracy: 0.8133 - val_loss: 0.3889
+Epoch 9/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 160s 1ms/step - accuracy: 0.8150 - loss: 0.3869 - val_accuracy: 0.8130 - val_loss: 0.3885
+Epoch 10/10
+112726/112726 ━━━━━━━━━━━━━━━━━━━━ 156s 1ms/step - accuracy: 0.8152 - loss: 0.3867 - val_accuracy: 0.8143 - val_loss: 0.3894
+60389/60389 ━━━━━━━━━━━━━━━━━━━━ 59s 976us/step - accuracy: 0.8149 - loss: 0.3889
+
+Accuracy: 0.81
+   accuracy      loss  val_accuracy  val_loss
+0  0.793142  0.421548      0.803234  0.404483
+1  0.806798  0.399444      0.807931  0.398664
+2  0.809866  0.394463      0.809427  0.394858
+3  0.811770  0.391848      0.811342  0.392066
+4  0.812810  0.390394      0.811474  0.392694
+
+![Keras Accuracy](House_of_Hope-main/Images/keras_accuracy.png)
+
+![Keras Loss](House_of_Hope-main/Images/keras_loss.jpg)
 
 ## GRADIENT BOOST MACHINE MODEL
