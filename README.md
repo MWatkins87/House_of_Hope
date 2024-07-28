@@ -1,4 +1,5 @@
 # HOUSE OF HOPE
+
 Predictive Recovery: Data-Driven Drug and Alcohol Rehab with Correlation Matrices
 
 ## ABSTRACT
@@ -41,85 +42,85 @@ All material appearing in this document is in the public domain and may be repro
 
 ## SAMHSA DATASET CODEBOOK
 
-* DISYR: Year of discharge
-* AGE: Age at Admission
-* GENDER: Gender
-* RACE: Race
-* ETHNIC: Ethnicity
-* MARSTAT: Marital Status
-* EDUC: Education
-* EMPLOY: Employment status at admission
-* EMPLOY_D: Employment status at discharge
-*  PREG: Pregnant at admission
-* VET: Veteran status
-* LIVARAG: Living arrangements at addmission
-* LIVARAG_D: Living arrangement at discharge
-* PRIMINC: Source of income/support
-* ARRESTS: Arrests in past 30 days prior to admissions
-* CBSA2010: CBSA 2010 code
-* REGION: Census Region
-* DIVISION: Census Division
-* SERVICES: Type of treatment/service at admission
-* SERVICES_D: Type of treatment/service at discharge
-* METHUSE: Medication-assisted opiod therapy
-* DATWAIT: Days waiting to enter substance treatment
-* REASON: Reason for discharge
-* LOS: Lenghth of stay in treatment (days)
-* PSOURCE: Referral source
-* DETCRIM: Detailed criminal justice referral
-* NOPRIOR: Previous substance use treatment episodes
-* SUB1: Substance use at admission (primary)
-* SUB1_D: Substance use discharge (primary)
-* ROUTE 1: Route of administration (primary)
-* FREQ1:  Frequency of use at admission
-* FREQ1_D: Frequency of use at discharge
-* FRSTUSE1: Age of first use (primary)
-* SUB2: Substance use at admission (secondary)
-* SUB2_D: Substance use at discharge (secondary)
-* ROUTE2: Route of administration (secondary)
-* FREQ2: Frequency of use at admisssion (secondary)
-* FREQ2_D: Frequency of use at discharge (secondary)
-* FRSTUSE2: Age of first use (secondary)
-* SUB3: Substance use at admission (tertiary)
-* ROUTE3: Route of administration (tertiary)
-* FREQ3: Frequency of use at admission (tertiary)
-* FREQ3_D: Frequency of use at discharge (tertiary)
-* FRSTUSE3: Age of first use of use (tertiary)
-* IDU: Current IV drug use reported at admission
-* ALCFLG: Alchol reported at admission
-* COKEFLG: Cocaine/crack reported at admission
-* HERFLG: Non-rx methadone reported at admission
-* OPSYNFLG: Other opiates/synthetics reported at admission
-* PCPFLG: PCP reported at admission
-* HALLFLG: Hallucinogins reported at admission
-* METHAMFLG: Methamphetamines reported at admission
-* STIMFLG: Other stimulants reported at admission
-* TRNQFLG: Other tranquilizers reported at admission
-* BARBFLG: Barbitutates reported at admission
-* SEDHPFLG: Other sedativ/hypnotics reported at admission
-* INHFLG: Inhalants reported at admission
-* OTCFLG: Over-the-counter medications reported at admission
-* OTHERFLG: Other drug use reported at admission
-* ALCDRUG: Substance use type
-* DSMCRIT: DSM diagnosis (SuDS4 or SuDS19)
-* PSYPROB: Co-occurring mental and substance use disorders
-* HLTHINS: Health insurance
-* PRIMPAY: Payment source primary (expected or actual)
-* FREQ_ATND_SELF_HELP: Attendance at substance use self help groups in 30 days prior to admission
-* FREQ_ATND_SELF_HELP_D: Attendatce at substance use self help groups at discharge
+- DISYR: Year of discharge
+- AGE: Age at Admission
+- GENDER: Gender
+- RACE: Race
+- ETHNIC: Ethnicity
+- MARSTAT: Marital Status
+- EDUC: Education
+- EMPLOY: Employment status at admission
+- EMPLOY_D: Employment status at discharge
+- PREG: Pregnant at admission
+- VET: Veteran status
+- LIVARAG: Living arrangements at addmission
+- LIVARAG_D: Living arrangement at discharge
+- PRIMINC: Source of income/support
+- ARRESTS: Arrests in past 30 days prior to admissions
+- CBSA2010: CBSA 2010 code
+- REGION: Census Region
+- DIVISION: Census Division
+- SERVICES: Type of treatment/service at admission
+- SERVICES_D: Type of treatment/service at discharge
+- METHUSE: Medication-assisted opiod therapy
+- DATWAIT: Days waiting to enter substance treatment
+- REASON: Reason for discharge
+- LOS: Lenghth of stay in treatment (days)
+- PSOURCE: Referral source
+- DETCRIM: Detailed criminal justice referral
+- NOPRIOR: Previous substance use treatment episodes
+- SUB1: Substance use at admission (primary)
+- SUB1_D: Substance use discharge (primary)
+- ROUTE 1: Route of administration (primary)
+- FREQ1: Frequency of use at admission
+- FREQ1_D: Frequency of use at discharge
+- FRSTUSE1: Age of first use (primary)
+- SUB2: Substance use at admission (secondary)
+- SUB2_D: Substance use at discharge (secondary)
+- ROUTE2: Route of administration (secondary)
+- FREQ2: Frequency of use at admisssion (secondary)
+- FREQ2_D: Frequency of use at discharge (secondary)
+- FRSTUSE2: Age of first use (secondary)
+- SUB3: Substance use at admission (tertiary)
+- ROUTE3: Route of administration (tertiary)
+- FREQ3: Frequency of use at admission (tertiary)
+- FREQ3_D: Frequency of use at discharge (tertiary)
+- FRSTUSE3: Age of first use of use (tertiary)
+- IDU: Current IV drug use reported at admission
+- ALCFLG: Alchol reported at admission
+- COKEFLG: Cocaine/crack reported at admission
+- HERFLG: Non-rx methadone reported at admission
+- OPSYNFLG: Other opiates/synthetics reported at admission
+- PCPFLG: PCP reported at admission
+- HALLFLG: Hallucinogins reported at admission
+- METHAMFLG: Methamphetamines reported at admission
+- STIMFLG: Other stimulants reported at admission
+- TRNQFLG: Other tranquilizers reported at admission
+- BARBFLG: Barbitutates reported at admission
+- SEDHPFLG: Other sedativ/hypnotics reported at admission
+- INHFLG: Inhalants reported at admission
+- OTCFLG: Over-the-counter medications reported at admission
+- OTHERFLG: Other drug use reported at admission
+- ALCDRUG: Substance use type
+- DSMCRIT: DSM diagnosis (SuDS4 or SuDS19)
+- PSYPROB: Co-occurring mental and substance use disorders
+- HLTHINS: Health insurance
+- PRIMPAY: Payment source primary (expected or actual)
+- FREQ_ATND_SELF_HELP: Attendance at substance use self help groups in 30 days prior to admission
+- FREQ_ATND_SELF_HELP_D: Attendatce at substance use self help groups at discharge
 
 ## DATA CLEANING AND PREPARATION
 
 All variables in the dataset were encoded as integers corresponding to specific values, as demonstrated in the example of the target column "REASON" detailed below. Missing values in the dataset were coded as -9.
 
-* REASON: Reason for discharge 
-* 1 Treatment completed
-* 2 Dropped out of treatment
-* 3 Terminated by facility
-* 4 Transferred to another treatment program or facility
-* 5 Incarcerated
-* 6 Death
-* 7 Other
+- REASON: Reason for discharge
+- 1 Treatment completed
+- 2 Dropped out of treatment
+- 3 Terminated by facility
+- 4 Transferred to another treatment program or facility
+- 5 Incarcerated
+- 6 Death
+- 7 Other
 
 The percentage of NaN values and the correlation coefficients for each column were calculated. Based on this analysis, the dataset was reviewed with the House of Hope team to code the null values and identify columns for removal.
 
@@ -127,47 +128,47 @@ The columns CASE_ID, DISYR, and STFIPS were dropped as they were not strongly co
 
 The columns SERVICES and SERVICES_D were also dropped because the project's goal is to create an intake questionnaire to predict a prospective resident's treatment outcome. Since all prospective clients are required to be in recovery, these columns were deemed unnecessary by the House of Hope team.
 
-Based on the input of the House of Hope, all null values were changed to "0" with the following exceptions: 
+Based on the input of the House of Hope, all null values were changed to "0" with the following exceptions:
 
-* FREQ1, FREQ2, FREQ3:  1- "No use in the past month"
-* RACE:  7- "Other single race"
-* EDUC: 2- "Grade 9-11"
-* EMPLOY, EMPLOY_2: 2- "Unemployed"
-* PREG: 2- "No"
-* VET: 2- "No"
-* LIVARAG: 1- "Homeless"
-* PRIMINC: 4- "Other"
-* PSOURCE: 1- "Individual"
-* ROUTE1: 5- "Other"
-* FRSTUSE1, FRSTUSE2, FRSTUSE3: 3- "15-17 years"
-* SUB1, SUB2, SUB3, SUB1_D, SUB2_D, SUB3_D: 19- "Other drugs"
-* DSMCRT: 5- "Opiod Dependence"
-* PSYPROB: 1- "Yes"
-* PRIMPAY: 1 - "Self-pay"
+- FREQ1, FREQ2, FREQ3: 1- "No use in the past month"
+- RACE: 7- "Other single race"
+- EDUC: 2- "Grade 9-11"
+- EMPLOY, EMPLOY_2: 2- "Unemployed"
+- PREG: 2- "No"
+- VET: 2- "No"
+- LIVARAG: 1- "Homeless"
+- PRIMINC: 4- "Other"
+- PSOURCE: 1- "Individual"
+- ROUTE1: 5- "Other"
+- FRSTUSE1, FRSTUSE2, FRSTUSE3: 3- "15-17 years"
+- SUB1, SUB2, SUB3, SUB1_D, SUB2_D, SUB3_D: 19- "Other drugs"
+- DSMCRT: 5- "Opiod Dependence"
+- PSYPROB: 1- "Yes"
+- PRIMPAY: 1 - "Self-pay"
 
-> Most importantly, House of Hope wanted to change the values of the variables of SUB1, SUB2, SUB3 and SUB1_D, SUB2_D, SUB3_D from the actual drugs that the perspective resident had been using and recode them as what they perceived to be "a success" and what they deemed to be "a failure".  House of Hope was unconcerned if a hard drug user continued to drink or take prescription drugs and would consider those case to be successful.  As such these values were changed to "1 -success"
+> Most importantly, House of Hope wanted to change the values of the variables of SUB1, SUB2, SUB3 and SUB1_D, SUB2_D, SUB3_D from the actual drugs that the perspective resident had been using and recode them as what they perceived to be "a success" and what they deemed to be "a failure". House of Hope was unconcerned if a hard drug user continued to drink or take prescription drugs and would consider those case to be successful. As such these values were changed to "1 -success"
 
-* 2- alcohol
-* 12- Other stimulants
-* 13- Benzodiazepines
-* 14- Other tranquilizers
-* 16- Other sedatives
-* 18- Over-the-counter drugs
+- 2- alcohol
+- 12- Other stimulants
+- 13- Benzodiazepines
+- 14- Other tranquilizers
+- 16- Other sedatives
+- 18- Over-the-counter drugs
 
 All other values were changed "0- failure".
 
 Similarly, the values in the target column, "REASON" were converted to pass/fail in order to predict a binary. These two values were converted to "1- pass":
 
-* 1- Treatment completed
-* 4- transfered to another facility
+- 1- Treatment completed
+- 4- transfered to another facility
 
 These values were converted to "0- fail":
 
-* 2- Dropped out of treatment
-* 3- Terminated by facility
-* 5- Incarcerated
-* 6- Death
-* 7- Other
+- 2- Dropped out of treatment
+- 3- Terminated by facility
+- 5- Incarcerated
+- 6- Death
+- 7- Other
 
 The target column was dropped, and the dataset was split into training and test sets with an 80/20 ratio. The training data was then scaled using StandardScaler and prepared for model training.
 
@@ -175,25 +176,25 @@ The target column was dropped, and the dataset was split into training and test 
 
 Correlation coefficents were generated for all of the dimensions in the dataset with the target column generating the following results.
 
-* MARSTAT                0.138023
-* FRSTUSE1               0.139035
-* VET                    0.144566
-* SERVICES_D             0.152773
-* SERVICES               0.154441
-* IDU                    0.155722
-* ROUTE1                 0.165564
-* EMPLOY                 0.177870
-* FREQ_ATND_SELF_HELP    0.183493
-* SUB1                   0.191675
-* EDUC                   0.193754
-* LIVARAG_D              0.206890
-* EMPLOY_D               0.208258
-* LIVARAG                0.209302
-* ARRESTS_D              0.209523
-* ARRESTS                0.209631
-* FREQ1_D                0.214312
-* SUB1_D                 0.243122
-* REASON                 1.000000
+- MARSTAT 0.138023
+- FRSTUSE1 0.139035
+- VET 0.144566
+- SERVICES_D 0.152773
+- SERVICES 0.154441
+- IDU 0.155722
+- ROUTE1 0.165564
+- EMPLOY 0.177870
+- FREQ_ATND_SELF_HELP 0.183493
+- SUB1 0.191675
+- EDUC 0.193754
+- LIVARAG_D 0.206890
+- EMPLOY_D 0.208258
+- LIVARAG 0.209302
+- ARRESTS_D 0.209523
+- ARRESTS 0.209631
+- FREQ1_D 0.214312
+- SUB1_D 0.243122
+- REASON 1.000000
 
 Intutitively, the type and frequency of the drug of choice once the person was discharged were the primary model predicters. Also, clients who had been arrested and are presumptively on a court appointed drug treatment program have a high predictive value as well as the stablity of the client's living and employment situation.
 
@@ -245,30 +246,31 @@ However, some variables are not as easily justifiable. It is questionable whethe
 
 In discussions with House of Hope, it was decided that using filters might mitigate these ethical concerns. By comparing residents with similar demographic profiles rather than the entire dataset, ethical issues in prioritizing residents using data models can be addressed more effectively.
 
-Filters were created for each of the variables in the dataset: MARSTAT", "EMPLOY", "LIVARAG", "DAYWAIT", "SERVICES", "FRSTUSE1", "FREQ_ATND_SELF_HELP_D", "PRIMPAY", "DIVISION", "PREG", "METHUSE".  A filtered data set was created with selection of values from each variable to investigate whether there was a significant change in the correlation coeffients in the new data set to justify the use of filters.
+Filters were created for each of the variables in the dataset: MARSTAT", "EMPLOY", "LIVARAG", "DAYWAIT", "SERVICES", "FRSTUSE1", "FREQ_ATND_SELF_HELP_D", "PRIMPAY", "DIVISION", "PREG", "METHUSE". A filtered data set was created with selection of values from each variable to investigate whether there was a significant change in the correlation coeffients in the new data set to justify the use of filters.
 
 ## MULTI-LEVEL PERCEPTRON (MLP) MODEL
 
 Understanding the Multilayer Perceptron (MLP) model is fundamental in neural networks and deep learning. MLP is a type of artificial neural network (ANN) that consists of multiple layers of nodes (neurons) with each layer fully connected to the next one. Here's a detailed overview to help you grasp the concept better.
 Key Concepts of MLP
+
 1. Structure of MLP
-Input Layer: The first layer that receives the input data. Each node in this layer represents a feature in the input data.
-Hidden Layers: Intermediate layers between the input and output layers. These layers perform computations and learn the representations of the input data.
-Output Layer: The final layer that produces the prediction or classification result. The number of nodes in this layer depends on the nature of the task (e.g., one node for binary classification, multiple nodes for multi-class classification).
+   Input Layer: The first layer that receives the input data. Each node in this layer represents a feature in the input data.
+   Hidden Layers: Intermediate layers between the input and output layers. These layers perform computations and learn the representations of the input data.
+   Output Layer: The final layer that produces the prediction or classification result. The number of nodes in this layer depends on the nature of the task (e.g., one node for binary classification, multiple nodes for multi-class classification).
 2. Activation Functions
-Activation functions introduce non-linearity into the network, enabling it to learn complex patterns.
-Sigmoid: σ(x)=11+e−x\sigma(x) = \frac{1}{1 + e^{-x}}σ(x)=1+e−x1​
-ReLU (Rectified Linear Unit): ReLU(x)=max⁡(0,x)\text{ReLU}(x) = \max(0, x)ReLU(x)=max(0,x)
-Tanh: tanh⁡(x)=ex−e−xex+e−x\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}tanh(x)=ex+e−xex−e−x​
+   Activation functions introduce non-linearity into the network, enabling it to learn complex patterns.
+   Sigmoid: σ(x)=11+e−x\sigma(x) = \frac{1}{1 + e^{-x}}σ(x)=1+e−x1​
+   ReLU (Rectified Linear Unit): ReLU(x)=max⁡(0,x)\text{ReLU}(x) = \max(0, x)ReLU(x)=max(0,x)
+   Tanh: tanh⁡(x)=ex−e−xex+e−x\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}tanh(x)=ex+e−xex−e−x​
 3. Forward Propagation
-In forward propagation, the input data is passed through the network layer by layer. Each neuron calculates a weighted sum of its inputs, applies the activation function, and passes the result to the next layer.
+   In forward propagation, the input data is passed through the network layer by layer. Each neuron calculates a weighted sum of its inputs, applies the activation function, and passes the result to the next layer.
 4. Backpropagation
-Backpropagation is the process of training the network. It involves:
-Calculating the Loss: Using a loss function (e.g., Mean Squared Error for regression, Cross-Entropy for classification) to measure the difference between the predicted and actual values.
-Computing Gradients: Determining the gradients of the loss function with respect to the weights.
-Updating Weights: Adjusting the weights using optimization algorithms like Gradient Descent to minimize the loss.
+   Backpropagation is the process of training the network. It involves:
+   Calculating the Loss: Using a loss function (e.g., Mean Squared Error for regression, Cross-Entropy for classification) to measure the difference between the predicted and actual values.
+   Computing Gradients: Determining the gradients of the loss function with respect to the weights.
+   Updating Weights: Adjusting the weights using optimization algorithms like Gradient Descent to minimize the loss.
 5. Training the MLP
-Training involves multiple iterations (epochs) where forward and backpropagation steps are repeated, continuously improving the model’s weights to minimize the loss.
+   Training involves multiple iterations (epochs) where forward and backpropagation steps are repeated, continuously improving the model’s weights to minimize the loss.
 
 Step 1: Import Libraries
 python
@@ -283,16 +285,20 @@ Step 2: Load and Preprocess the Data
 python
 
 # Load the dataset
+
 data = pd.read_csv('data.csv')
 
 # Separate features and target
+
 X = data.drop('target', axis=1)
 y = data['target']
 
 # Train-test split
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Standardize the features
+
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
@@ -300,17 +306,21 @@ Step 3: Initialize and Train the MLP
 python
 
 # Initialize the MLPClassifier
+
 mlp = MLPClassifier(hidden_layer_sizes=(100,), activation='relu', solver='adam', max_iter=300, random_state=42)
 
 # Train the model
+
 mlp.fit(X_train, y_train)
 Step 4: Evaluate the Model
 python
 
 # Make predictions
+
 y_pred = mlp.predict(X_test)
 
 # Evaluate the model
+
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 Explanation of the Code
@@ -327,18 +337,19 @@ MLPs are powerful models for various tasks, from simple binary classification to
 # MLP Statistical Analysis
 
 Accuracy: 0.81
-              precision    recall  f1-score   support
+precision recall f1-score support
 
            0       0.77      0.68      0.72    708990
            1       0.83      0.88      0.85   1223451
 
     accuracy                           0.81   1932441
-   macro avg       0.80      0.78      0.79   1932441
-weighted avg       0.81      0.81      0.81   1932441
+
+macro avg 0.80 0.78 0.79 1932441
+weighted avg 0.81 0.81 0.81 1932441
 
 ## TensorFlow/Keras model
 
-ensorFlow and Keras are popular frameworks for building and training neural networks. Keras is a high-level API that runs on top of TensorFlow, making it easier to build and train models. Let's break down the basics of using TensorFlow and Keras to build neural networks, particularly focusing on the core concepts and providing a simple example.
+TensorFlow and Keras are popular frameworks for building and training neural networks. Keras is a high-level API that runs on top of TensorFlow, making it easier to build and train models. Let's break down the basics of using TensorFlow and Keras to build neural networks, particularly focusing on the core concepts and providing a simple example.
 Key Concepts of TensorFlow/Keras Models
 Layers: The building blocks of neural networks. Common layers include Dense (fully connected), Conv2D (convolutional), LSTM (recurrent), etc.
 Models: Composed of layers. In Keras, there are two main types of models:
@@ -364,16 +375,20 @@ Step 2: Load and Preprocess Data
 python
 
 # Example: Load the dataset
+
 data = pd.read_csv('data.csv')
 
 # Separate features and target
+
 X = data.drop('target', axis=1)
 y = data['target']
 
 # Train-test split
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Standardize the features
+
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
@@ -381,12 +396,14 @@ Step 3: Build the Model
 python
 
 # Initialize the Sequential model
+
 model = Sequential()
 
 # Add layers
+
 model.add(Dense(32, activation='relu', input_shape=(X_train.shape[1],)))
 model.add(Dense(16, activation='relu'))
-model.add(Dense(1, activation='sigmoid'))  # Sigmoid activation for binary classification
+model.add(Dense(1, activation='sigmoid')) # Sigmoid activation for binary classification
 Step 4: Compile the Model
 python
 
@@ -398,18 +415,20 @@ history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split
 Step 6: Evaluate the Model
 python
 
-
-Note: The model initially utilize a categorical_crossentropy optimizer that was replace by a binary_crossentropy optimizer with the hypothesis that the binary optimizer would provide better accuracy; however, the binary optimizer resulted in a 20 point drop in accuracy.  As a result, the final model utilizes a categorical_crossentropy optimizer.
+Note: The model initially utilize a categorical_crossentropy optimizer that was replace by a binary_crossentropy optimizer with the hypothesis that the binary optimizer would provide better accuracy; however, the binary optimizer resulted in a 20 point drop in accuracy. As a result, the final model utilizes a categorical_crossentropy optimizer.
 
 # Evaluate on the test set
+
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
 print(f'Test Loss: {test_loss}')
 print(f'Test Accuracy: {test_accuracy}')
 
 # Make predictions
+
 y_pred = (model.predict(X_test) > 0.5).astype("int32")
 
 # Print classification report
+
 print(classification_report(y_test, y_pred))
 Explanation of the Code
 Data Preprocessing: The dataset is loaded, features and target are separated, and data is split into training and test sets. Features are standardized using StandardScaler.
@@ -430,18 +449,18 @@ Deep Learning with Python by François Chollet
 # Tensorflow/Keras Statistical Results
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┃ Layer (type) ┃ Output Shape ┃ Param # ┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
-│ dense_6 (Dense)                 │ (None, 100)            │         6,900 │
+│ dense_6 (Dense) │ (None, 100) │ 6,900 │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense_7 (Dense)                 │ (None, 50)             │         5,050 │
+│ dense_7 (Dense) │ (None, 50) │ 5,050 │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense_8 (Dense)                 │ (None, 3)              │           153 │
+│ dense_8 (Dense) │ (None, 3) │ 153 │
 └─────────────────────────────────┴────────────────────────┴───────────────┘
 
- Total params: 12,103 (47.28 KB)
- Trainable params: 12,103 (47.28 KB)
- Non-trainable params: 0 (0.00 B)
+Total params: 12,103 (47.28 KB)
+Trainable params: 12,103 (47.28 KB)
+Non-trainable params: 0 (0.00 B)
 Epoch 1/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 167s 1ms/step - accuracy: 0.7800 - loss: 0.4443 - val_accuracy: 0.8032 - val_loss: 0.4045
 Epoch 2/10
@@ -465,12 +484,12 @@ Epoch 10/10
 60389/60389 ━━━━━━━━━━━━━━━━━━━━ 59s 976us/step - accuracy: 0.8149 - loss: 0.3889
 
 Accuracy: 0.81
-   accuracy      loss  val_accuracy  val_loss
-0  0.793142  0.421548      0.803234  0.404483
-1  0.806798  0.399444      0.807931  0.398664
-2  0.809866  0.394463      0.809427  0.394858
-3  0.811770  0.391848      0.811342  0.392066
-4  0.812810  0.390394      0.811474  0.392694
+accuracy loss val_accuracy val_loss
+0 0.793142 0.421548 0.803234 0.404483
+1 0.806798 0.399444 0.807931 0.398664
+2 0.809866 0.394463 0.809427 0.394858
+3 0.811770 0.391848 0.811342 0.392066
+4 0.812810 0.390394 0.811474 0.392694
 
 ![Keras Accuracy](/Images/keras_accuracy.png)
 
