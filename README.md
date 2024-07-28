@@ -472,8 +472,8 @@ Accuracy: 0.81
 3  0.811770  0.391848      0.811342  0.392066
 4  0.812810  0.390394      0.811474  0.392694
 
-![Keras Accuracy](House_of_Hope/Images?keras_accuracy.png)
+![Keras Accuracy](/Images?keras_accuracy.png)
 
-![Keras Loss](House_of_Hope/Images/keras_loss.jpg)
+![Keras Loss](/Images/keras_loss.jpg)
 
 ## GRADIENT BOOST MACHINE MODEL
