@@ -349,7 +349,7 @@ Key Points to Remember
 **Computational Cost:** Training deep networks can be computationally expensive. Efficient use of resources and optimization techniques is essential.
 MLPs are powerful models for various tasks, from simple binary classification to complex image and speech recognition problems. Understanding the structure and training process is crucial for effectively applying and tuning these models.
 
-**MLP Statistical Analysis**
+## MLP Statistical Analysis
 
 Accuracy: 0.81
 precision recall f1-score support
