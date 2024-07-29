@@ -251,28 +251,36 @@ Filters were created for each of the variables in the dataset: MARSTAT", "EMPLOY
 ## MULTI-LEVEL PERCEPTRON (MLP) MODEL
 
 Understanding the Multilayer Perceptron (MLP) model is fundamental in neural networks and deep learning. MLP is a type of artificial neural network (ANN) that consists of multiple layers of nodes (neurons) with each layer fully connected to the next one. Here's a detailed overview to help you grasp the concept better.
-Key Concepts of MLP
 
-1. Structure of MLP
+**Key Concepts of MLP**
+
+**1. Structure of MLP**
    Input Layer: The first layer that receives the input data. Each node in this layer represents a feature in the input data.
    Hidden Layers: Intermediate layers between the input and output layers. These layers perform computations and learn the representations of the input data.
    Output Layer: The final layer that produces the prediction or classification result. The number of nodes in this layer depends on the nature of the task (e.g., one node for binary classification, multiple nodes for multi-class classification).
-2. Activation Functions
+   
+**2. Activation Functions**
    Activation functions introduce non-linearity into the network, enabling it to learn complex patterns.
    Sigmoid: σ(x)=11+e−x\sigma(x) = \frac{1}{1 + e^{-x}}σ(x)=1+e−x1​
    ReLU (Rectified Linear Unit): ReLU(x)=max⁡(0,x)\text{ReLU}(x) = \max(0, x)ReLU(x)=max(0,x)
    Tanh: tanh⁡(x)=ex−e−xex+e−x\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}tanh(x)=ex+e−xex−e−x​
-3. Forward Propagation
+   
+**3. Forward Propagation**
    In forward propagation, the input data is passed through the network layer by layer. Each neuron calculates a weighted sum of its inputs, applies the activation function, and passes the result to the next layer.
-4. Backpropagation
+   
+**4. Backpropagation**
    Backpropagation is the process of training the network. It involves:
-   Calculating the Loss: Using a loss function (e.g., Mean Squared Error for regression, Cross-Entropy for classification) to measure the difference between the predicted and actual values.
-   Computing Gradients: Determining the gradients of the loss function with respect to the weights.
-   Updating Weights: Adjusting the weights using optimization algorithms like Gradient Descent to minimize the loss.
-5. Training the MLP
+   
+   *Calculating the Loss:* Using a loss function (e.g., Mean Squared Error for regression, Cross-Entropy for classification) to measure the difference between the predicted and actual values.
+   
+   *Computing Gradients:* Determining the gradients of the loss function with respect to the weights.
+   
+   *Updating Weights:* Adjusting the weights using optimization algorithms like Gradient Descent to minimize the loss.
+   
+**9. Training the MLP**
    Training involves multiple iterations (epochs) where forward and backpropagation steps are repeated, continuously improving the model’s weights to minimize the loss.
 
-Step 1: Import Libraries
+Import Libraries
 python
 
 import numpy as np
@@ -284,20 +292,20 @@ from sklearn.metrics import classification_report, confusion_matrix
 Step 2: Load and Preprocess the Data
 python
 
-# Load the dataset
+**Load the dataset**
 
 data = pd.read_csv('data.csv')
 
-# Separate features and target
+**Separate features and target**
 
 X = data.drop('target', axis=1)
 y = data['target']
 
-# Train-test split
+**Train-test split**
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Standardize the features
+**Standardize the features**
 
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
@@ -305,36 +313,43 @@ X_test = scaler.transform(X_test)
 Step 3: Initialize and Train the MLP
 python
 
-# Initialize the MLPClassifier
+**Initialize the MLPClassifier**
 
 mlp = MLPClassifier(hidden_layer_sizes=(100,), activation='relu', solver='adam', max_iter=300, random_state=42)
 
-# Train the model
+**Train the model**
 
 mlp.fit(X_train, y_train)
 Step 4: Evaluate the Model
 python
 
-# Make predictions
+**Make predictions**
 
 y_pred = mlp.predict(X_test)
 
-# Evaluate the model
+**Evaluate the model**
 
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
-Explanation of the Code
-Data Preprocessing: The dataset is loaded and split into training and testing sets. Features are standardized using StandardScaler.
+
+**Explanation of the Code**
+
+**Data Preprocessing:** The dataset is loaded and split into training and testing sets. Features are standardized using StandardScaler.
 MLP Initialization: An MLPClassifier is initialized with one hidden layer of 100 neurons, ReLU activation function, and Adam optimizer.
-Training: The model is trained on the training data using the fit method.
-Evaluation: The model's performance is evaluated on the test data using a confusion matrix and classification report.
+
+**Training:** The model is trained on the training data using the fit method.
+
+**Evaluation:** The model's performance is evaluated on the test data using a confusion matrix and classification report.
 Key Points to Remember
-Hyperparameters: MLP has several hyperparameters (e.g., number of hidden layers, number of neurons, learning rate) that significantly affect its performance. Tuning these hyperparameters is crucial.
-Overfitting: MLP can overfit, especially with a small dataset or too many neurons. Techniques like dropout and regularization can help prevent overfitting.
-Computational Cost: Training deep networks can be computationally expensive. Efficient use of resources and optimization techniques is essential.
+
+**Hyperparameters:** MLP has several hyperparameters (e.g., number of hidden layers, number of neurons, learning rate) that significantly affect its performance. Tuning these hyperparameters is crucial.
+
+**Overfitting:** MLP can overfit, especially with a small dataset or too many neurons. Techniques like dropout and regularization can help prevent overfitting.
+
+**Computational Cost:** Training deep networks can be computationally expensive. Efficient use of resources and optimization techniques is essential.
 MLPs are powerful models for various tasks, from simple binary classification to complex image and speech recognition problems. Understanding the structure and training process is crucial for effectively applying and tuning these models.
 
-# MLP Statistical Analysis
+**MLP Statistical Analysis**
 
 Accuracy: 0.81
 precision recall f1-score support
@@ -350,17 +365,24 @@ weighted avg 0.81 0.81 0.81 1932441
 ## TensorFlow/Keras model
 
 TensorFlow and Keras are popular frameworks for building and training neural networks. Keras is a high-level API that runs on top of TensorFlow, making it easier to build and train models. Let's break down the basics of using TensorFlow and Keras to build neural networks, particularly focusing on the core concepts and providing a simple example.
-Key Concepts of TensorFlow/Keras Models
-Layers: The building blocks of neural networks. Common layers include Dense (fully connected), Conv2D (convolutional), LSTM (recurrent), etc.
+
+**Key Concepts of TensorFlow/Keras Models**
+
+**Layers:** The building blocks of neural networks. Common layers include Dense (fully connected), Conv2D (convolutional), LSTM (recurrent), etc.
 Models: Composed of layers. In Keras, there are two main types of models:
 Sequential Model: A linear stack of layers.
-Functional API: More flexible, allows building complex models (e.g., multi-input, multi-output).
-Compilation: Configuring the model with loss functions, optimizers, and metrics.
-Training: Using the fit method to train the model on data.
-Evaluation: Using the evaluate method to assess the model's performance.
-Prediction: Using the predict method to make predictions on new data.Building and Training a Simple Neural Network with Keras
 
-Step 1: Import Libraries
+**Functional API:** More flexible, allows building complex models (e.g., multi-input, multi-output).
+
+**Compilation:** Configuring the model with loss functions, optimizers, and metrics.
+
+**Training:** Using the fit method to train the model on data.
+
+**Evaluation:** Using the evaluate method to assess the model's performance.
+
+**Prediction:** Using the predict method to make predictions on new data.Building and Training a Simple Neural Network with Keras
+
+Import Libraries
 python
 
 import numpy as np
@@ -374,20 +396,20 @@ from sklearn.metrics import classification_report
 Step 2: Load and Preprocess Data
 python
 
-# Example: Load the dataset
+**Load the dataset**
 
 data = pd.read_csv('data.csv')
 
-# Separate features and target
+**Separate features and target**
 
 X = data.drop('target', axis=1)
 y = data['target']
 
-# Train-test split
+**Train-test split**
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Standardize the features
+**Standardize the features8*
 
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
@@ -395,11 +417,11 @@ X_test = scaler.transform(X_test)
 Step 3: Build the Model
 python
 
-# Initialize the Sequential model
+**Initialize the Sequential model**
 
 model = Sequential()
 
-# Add layers
+**Add layers**
 
 model.add(Dense(32, activation='relu', input_shape=(X_train.shape[1],)))
 model.add(Dense(16, activation='relu'))
@@ -415,38 +437,46 @@ history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split
 Step 6: Evaluate the Model
 python
 
-Note: The model initially utilize a categorical_crossentropy optimizer that was replace by a binary_crossentropy optimizer with the hypothesis that the binary optimizer would provide better accuracy; however, the binary optimizer resulted in a 20 point drop in accuracy. As a result, the final model utilizes a categorical_crossentropy optimizer.
+**Note:** The model initially utilize a categorical_crossentropy optimizer that was replace by a binary_crossentropy optimizer with the hypothesis that the binary optimizer would provide better accuracy; however, the binary optimizer resulted in a 20 point drop in accuracy. As a result, the final model utilizes a categorical_crossentropy optimizer.
 
-# Evaluate on the test set
+**Evaluate on the test set**
 
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
 print(f'Test Loss: {test_loss}')
 print(f'Test Accuracy: {test_accuracy}')
 
-# Make predictions
+**Make predictions**
 
 y_pred = (model.predict(X_test) > 0.5).astype("int32")
 
-# Print classification report
+**Print classification report**
 
 print(classification_report(y_test, y_pred))
-Explanation of the Code
-Data Preprocessing: The dataset is loaded, features and target are separated, and data is split into training and test sets. Features are standardized using StandardScaler.
-Model Building: A Sequential model is initialized, and layers are added. The first layer specifies input_shape, and the final layer uses a sigmoid activation function for binary classification.
-Compilation: The model is compiled with the Adam optimizer, binary cross-entropy loss function, and accuracy metric.
+
+**Explanation of the Code**
+
+**Data Preprocessing:** The dataset is loaded, features and target are separated, and data is split into training and test sets. Features are standardized using StandardScaler.
+
+**Model Building:** A Sequential model is initialized, and layers are added. The first layer specifies input_shape, and the final layer uses a sigmoid activation function for binary classification.
+
+**Compilation:** The model is compiled with the Adam optimizer, binary cross-entropy loss function, and accuracy metric.
 Training: The model is trained on the training data using the fit method, with a validation split to monitor performance on validation data.
-Evaluation: The model's performance is evaluated on the test set using the evaluate method. Predictions are made on the test set, and a classification report is printed.
-Key Points to Remember
+
+**Evaluation:** The model's performance is evaluated on the test set using the evaluate method. Predictions are made on the test set, and a classification report is printed.
+
+**Key Points to Remember**
 Epochs and Batch Size: These hyperparameters control the training process. An epoch is one complete pass through the training data, while batch size determines the number of samples processed before updating the model's weights.
-Validation Split: Part of the training data is used for validation to monitor the model's performance on unseen data during training.
+
+**Validation Split:** Part of the training data is used for validation to monitor the model's performance on unseen data during training.
 Activation Functions: Different activation functions are used for different layers. ReLU is commonly used for hidden layers, while sigmoid is used for binary classification in the output layer.
-Additional Resources
+
+**Additional Resources**
 To learn more about TensorFlow and Keras, consider exploring the following resources:
 TensorFlow Documentation
 Keras Documentation
 Deep Learning with Python by François Chollet
 
-# Tensorflow/Keras Statistical Results
+## Tensorflow/Keras Statistical Results
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
 ┃ Layer (type) ┃ Output Shape ┃ Param # ┃
@@ -483,7 +513,7 @@ Epoch 10/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 156s 1ms/step - accuracy: 0.8152 - loss: 0.3867 - val_accuracy: 0.8143 - val_loss: 0.3894
 60389/60389 ━━━━━━━━━━━━━━━━━━━━ 59s 976us/step - accuracy: 0.8149 - loss: 0.3889
 
-Accuracy: 0.81
+**Accuracy: 0.81**
 accuracy loss val_accuracy val_loss
 0 0.793142 0.421548 0.803234 0.404483
 1 0.806798 0.399444 0.807931 0.398664
