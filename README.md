@@ -525,4 +525,149 @@ accuracy loss val_accuracy val_loss
 
 ![Keras Loss](/Images/keras_loss.png)
 
-## GRADIENT BOOST MACHINE MODEL
+## PyTorch Model
+
+PyTorch is a popular framework for building and training neural networks, known for its flexibility and ease of use. Let's break down the basics of using PyTorch to build neural networks, focusing on the core concepts and providing a simple example.
+
+**Key Concepts of PyTorch Models**
+
+**Tensors:** The building blocks of neural networks. Similar to NumPy arrays but with added capabilities for GPU acceleration.
+
+**Autograd:** Automatic differentiation for building and training neural networks.
+
+**Modules:** Composed of layers. In PyTorch, models are created by subclassing torch.nn.Module and defining the layers in the __init__ method.
+
+**Building and Training a Neural Network with PyTorch**
+
+**Import Libraries**
+
+python
+
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import classification_report
+Step 2: Load and Preprocess Data
+
+python
+
+**Load the dataset**
+
+data = pd.read_csv('data.csv')
+
+**Separate features and target**
+
+X = data.drop('target', axis=1)
+y = data['target']
+
+**Train-test split**
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+**Standardize the features**
+
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+**Convert to PyTorch tensors**
+
+X_train = torch.tensor(X_train, dtype=torch.float32)
+X_test = torch.tensor(X_test, dtype=torch.float32)
+y_train = torch.tensor(y_train.values, dtype=torch.float32).unsqueeze(1)
+y_test = torch.tensor(y_test.values, dtype=torch.float32).unsqueeze(1)
+Step 3: Build the Model
+
+python
+
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(X_train.shape[1], 32)
+        self.fc2 = nn.Linear(32, 16)
+        self.fc3 = nn.Linear(16, 1)
+        self.sigmoid = nn.Sigmoid()
+
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = torch.relu(self.fc2(x))
+        x = self.sigmoid(self.fc3(x))
+        return x
+
+model = SimpleNN()
+
+**Step 4: Compile the Model**
+
+python
+
+criterion = nn.BCELoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+**Step 5: Train the Model**
+
+python
+Copy code
+num_epochs = 50
+batch_size = 32
+train_loader = torch.utils.data.DataLoader(
+    dataset=torch.utils.data.TensorDataset(X_train, y_train),
+    batch_size=batch_size,
+    shuffle=True
+)
+
+for epoch in range(num_epochs):
+    model.train()
+    for i, (inputs, labels) in enumerate(train_loader):
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
+        
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+**Step 6: Evaluate the Model**
+
+python
+
+model.eval()
+with torch.no_grad():
+    y_pred = model(X_test)
+    y_pred = (y_pred > 0.5).float()
+    test_loss = criterion(y_pred, y_test)
+    test_accuracy = (y_pred == y_test).float().mean()
+
+print(f'Test Loss: {test_loss.item()}')
+print(f'Test Accuracy: {test_accuracy.item()}')
+
+print(classification_report(y_test, y_pred)
+
+**Explanation of the Code**
+
+**Data Preprocessing:** The dataset is loaded, features and target are separated, and data is split into training and test sets. Features are standardized using StandardScaler and converted to PyTorch tensors.
+
+**Model Building:** A subclass of nn.Module is created, defining layers in __init__ and implementing the forward pass in forward.
+Compilation: The model is compiled with the Adam optimizer and binary cross-entropy loss function (BCELoss).
+
+**Training:** The model is trained on the training data using a data loader, with a validation split to monitor performance on validation data.
+
+**Evaluation:** The model's performance is evaluated on the test set using the loss function and accuracy metric. Predictions are made on the test set, and a classification report is printed.
+
+**Key Points to Remember**
+
+**Epochs and Batch Size:** These hyperparameters control the training process. An epoch is one complete pass through the training data, while batch size determines the number of samples processed before updating the model's weights.
+
+**Validation Split:** Part of the training data is used for validation to monitor the model's performance on unseen data during training.
+
+**Activation Functions:** Different activation functions are used for different layers. ReLU is commonly used for hidden layers, while sigmoid is used for binary classification in the output layer.
+
+**Additional Resources**
+
+To learn more about PyTorch, consider exploring the following resources:
+
+**PyTorch Documentation**
+
+Deep Learning with PyTorch by Eli Stevens, Luca Antiga, and Thomas Viehmann
