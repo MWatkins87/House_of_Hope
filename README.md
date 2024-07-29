@@ -351,16 +351,8 @@ MLPs are powerful models for various tasks, from simple binary classification to
 
 ## MLP Statistical Analysis
 
-Accuracy: 0.81
-precision recall f1-score support
-
-           0       0.77      0.68      0.72    708990
-           1       0.83      0.88      0.85   1223451
-
-    accuracy                           0.81   1932441
-
-macro avg 0.80 0.78 0.79 1932441
-weighted avg 0.81 0.81 0.81 1932441
+![MLP Accuracy](/Images/MLP -clean_df_Model.png)
+[MLP Loss](/Images/MLP_clean_df_accuracy.png)
 
 ## TensorFlow/Keras model
 
