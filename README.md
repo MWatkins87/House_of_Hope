@@ -351,8 +351,9 @@ MLPs are powerful models for various tasks, from simple binary classification to
 
 ## MLP Statistical Analysis
 
-![MLP Accuracy](/Images/MLP -clean_df_Model.png)
-[MLP Loss](/Images/MLP_clean_df_accuracy.png)
+![MLP Accuracy](/Images/MLP-clean_df_Model.png)
+
+![MLP Loss](/Images/MLP_clean_df_accuracy.png)
 
 ## TensorFlow/Keras model
 
