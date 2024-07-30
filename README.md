@@ -684,3 +684,11 @@ To learn more about PyTorch, consider exploring the following resources:
 **PyTorch Documentation**
 
 Deep Learning with PyTorch by Eli Stevens, Luca Antiga, and Thomas Viehmann
+
+## CONCLUSIONS
+
+In our study of predicting drug addiction rehab success, we have found that neural networks excel at forecasting outcomes in drug rehabilitation programs. These models are adept at handling the myriad complex variables that influence an individual's ability to complete drug addiction recovery treatment. Factors such as personal history, socio-economic background, and psychological conditions, which traditionally complicate predictions, are effectively managed by neural networks, leading to more accurate forecasts.
+
+Our experiments showed that neural networks configured in both TensorFlow and PyTorch returned nearly identical results. This consistency across different platforms underscores the robustness and reliability of neural network models in this context. It also suggests that the choice between TensorFlow and PyTorch can be based on user preference or specific project requirements without compromising the accuracy of the predictions.
+
+However, despite the promising capabilities of these models, significant ethical concerns remain regarding their application. Even with the implementation of filters designed to mitigate demographic biases, questions arise about the fairness and morality of using data models to grant or deny individuals access to treatment. The risk of perpetuating existing inequalities and potentially excluding those who might benefit from the programs based on algorithmic decisions cannot be overlooked.
