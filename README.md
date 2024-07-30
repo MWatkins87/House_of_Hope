@@ -486,32 +486,47 @@ Trainable params: 12,103 (47.28 KB)
 Non-trainable params: 0 (0.00 B)
 Epoch 1/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 167s 1ms/step - accuracy: 0.7800 - loss: 0.4443 - val_accuracy: 0.8032 - val_loss: 0.4045
+
 Epoch 2/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 154s 1ms/step - accuracy: 0.8057 - loss: 0.4010 - val_accuracy: 0.8079 - val_loss: 0.3987
+
 Epoch 3/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 162s 1ms/step - accuracy: 0.8094 - loss: 0.3949 - val_accuracy: 0.8094 - val_loss: 0.3949
+
 Epoch 4/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 156s 1ms/step - accuracy: 0.8119 - loss: 0.3918 - val_accuracy: 0.8113 - val_loss: 0.3921
+
 Epoch 5/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 158s 1ms/step - accuracy: 0.8130 - loss: 0.3902 - val_accuracy: 0.8115 - val_loss: 0.3927
+
 Epoch 6/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 151s 1ms/step - accuracy: 0.8130 - loss: 0.3892 - val_accuracy: 0.8123 - val_loss: 0.3913
+
 Epoch 7/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 160s 1ms/step - accuracy: 0.8140 - loss: 0.3889 - val_accuracy: 0.8130 - val_loss: 0.3898
+
 Epoch 8/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 157s 1ms/step - accuracy: 0.8142 - loss: 0.3879 - val_accuracy: 0.8133 - val_loss: 0.3889
+
 Epoch 9/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 160s 1ms/step - accuracy: 0.8150 - loss: 0.3869 - val_accuracy: 0.8130 - val_loss: 0.3885
+
 Epoch 10/10
 112726/112726 ━━━━━━━━━━━━━━━━━━━━ 156s 1ms/step - accuracy: 0.8152 - loss: 0.3867 - val_accuracy: 0.8143 - val_loss: 0.3894
+
 60389/60389 ━━━━━━━━━━━━━━━━━━━━ 59s 976us/step - accuracy: 0.8149 - loss: 0.3889
 
 **Accuracy: 0.81**
 accuracy loss val_accuracy val_loss
+
 0 0.793142 0.421548 0.803234 0.404483
+
 1 0.806798 0.399444 0.807931 0.398664
+
 2 0.809866 0.394463 0.809427 0.394858
+
 3 0.811770 0.391848 0.811342 0.392066
+
 4 0.812810 0.390394 0.811474 0.392694
 
 ![Keras Accuracy](/Images/keras_accuracy.png)
