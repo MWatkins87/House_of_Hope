@@ -344,7 +344,7 @@ Gradient Boosting Classifiers are powerful models for various tasks, from binary
 # GRADIENT BOOSTING CLASSIFIER STATISTICAL ANALYSIS
 
 ![Gradient Boosting ROC](/Images/GradientBoostingMachines_(GBMs)_Classification_ROC_AUC_Score.png)
-![Gradient Boosting Training](/Images/GradientBoostingMachine_(GBMs)_Train.png)
+![Gradient Boosting Training](/Images/GradientBoostingMachines_(GBMs)_Train.png)
 
 
 ## MULTI-LEVEL PERCEPTRON (MLP) MODEL
