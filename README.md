@@ -246,12 +246,24 @@ However, some variables are not as easily justifiable. It is questionable whethe
 
 In discussions with House of Hope, it was decided that using filters might mitigate these ethical concerns. By comparing residents with similar demographic profiles rather than the entire dataset, ethical issues in prioritizing residents using data models can be addressed more effectively.
 
-Filters were created for each of the variables in the dataset: MARSTAT", "EMPLOY", "LIVARAG", "DAYWAIT", "SERVICES", "FRSTUSE1", "FREQ_ATND_SELF_HELP_D", "PRIMPAY", "DIVISION", "PREG", "METHUSE". A filtered data set was created with selection of values from each variable to investigate whether there was a significant change in the correlation coeffients in the new data set to justify the use of filters.
+Filters were created for each of the variables in the dataset: DSMCRIT, GENDER, AGE, RACE, EDUC, VET, ARRESTS, NOPRIOR, REGION, SUB1, SUB2, ALCFLG, PSYPROB, ALCDRUG, METHAMFLG, HLTHINS, MARSTAT, EMPLOY, LIVARAG, DAYWAIT, EMPLOY, LIVARAG, DAYWAIT, SERVICES, FRSTUSE1, FREQ_ATND_SELF_HELP, PRIPAY, DIVISION, PREG, METUSE.
 
-Gradient Boosting Classifier
+A filtered dataset was created for each value of each variable to investigate whether significant changes in correlation coefficients justified the use of filters. Each value produced a different list of top correlated variables and unique correlation coefficients, confirming the significance of using filters.
+
+A Gradio-based questionnaire was developed with a series of dropdown menus, allowing an administrator to optionally select a value for each variable. The percentage of data included for each value is displayed to the administrator, enabling them to determine if there are sufficient rows left in the dataset to generate an accurate prediction.
+
+The collected data is then added to a dictionary, which is subsequently split into the **X_train** and **X_test** datasets.
+
+The neural network predicts "1" for success and "0" for failure.
+
+A correlation matrix is generated from a subset of variables that correspond to actions the prospective resident could take to improve their chances of being accepted into the program. The top five correlations are formatted into a statement that lists actionable items the client can focus on to enhance their likelihood of admission.
+
+
+# GRADIENT BOOSTING CLASSIFIER
+
 Gradient Boosting Classifier (GBC) is a powerful machine learning algorithm that combines the predictions of several base estimators to improve robustness over a single estimator. This technique is part of ensemble learning, where multiple models are trained and combined to solve complex problems and improve the accuracy and performance of the model. Here's a detailed overview to help you grasp the concept better.
 
-## Key Concepts of Gradient Boosting Classifier
+**Key Concepts of Gradient Boosting Classifier**
 
 **Ensemble Learning:**
 
