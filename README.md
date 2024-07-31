@@ -993,6 +993,26 @@ The frequency distribution table summarizes the occurrence counts for various co
 
 The blocks of code below (reason 1, reason 2, reason 3, reason 4, and reason 5) is a series of if-else statements that checks the value of the variable reason1 and assigns a corresponding reason based on the value. The reasons are then printed in human-readable language to explain the correlation between the variables. This approach provides a structured and interpretable way to analyze correlations and present the results in a clear and understandable format. By assigning specific reasons to each correlation, the analysis becomes more accessible to non-technical audiences, enabling stakeholders to grasp the relationships between variables and make informed decisions based on the findings.
 
+**Visualizing the Models**
+
+**Gradient Boosting Machine Visualization**
+
+The visualization below shows the feature importance plot for the Gradient Boosting Machine (GBM) model. Feature importance indicates the relative contribution of each variable in predicting the target variable (e.g., treatment completion). Variables with higher importance values have a greater impact on the model's predictions, while those with lower values have less influence. In this plot, the variables are ranked based on their importance scores, with the most important variables appearing at the top. The visualization provides insights into which variables are most relevant for predicting treatment completion, helping identify key factors that drive successful outcomes. By understanding the relative importance of each variable, stakeholders can focus on the most influential factors and tailor interventions or strategies to improve treatment completion rates effectively.
+
+![Gradient Boost Visualization](/Images/GBM_graph.png)
+
+**MLP Neural Network Visualization**
+
+The visualizations below show the training and validation loss curves for the Multi-Layer Perceptron (MLP) Neural Network model. The loss curve represents the model's performance over training epochs, with lower loss values indicating better predictive accuracy. The training loss curve shows how the model's loss decreases as it learns from the training data, while the validation loss curve illustrates the model's generalization performance on unseen data. By monitoring the loss curves, stakeholders can assess the model's convergence, identify overfitting or underfitting issues, and determine the optimal training epoch for model deployment. These visualizations provide valuable insights into the MLP model's training dynamics and performance, enabling stakeholders to make informed decisions about its predictive capabilities and potential applications.
+
+![MLP Visualizaiton](/Images/MLP_graph.png)
+
+**TensorFlow and Keras Visualization**
+
+The visualizations below show the training and validation accuracy curves for the TensorFlow and Keras models. The accuracy curve represents the model's performance in correctly predicting the target variable (e.g., treatment completion) over training epochs, with higher accuracy values indicating better predictive performance. The training accuracy curve shows how the model's accuracy improves as it learns from the training data, while the validation accuracy curve illustrates the model's generalization performance on unseen data. By monitoring the accuracy curves, stakeholders can evaluate the model's convergence, identify potential overfitting or underfitting issues, and assess its predictive capabilities. These visualizations offer valuable insights into the TensorFlow and Keras models' training dynamics and performance, enabling stakeholders to make data-driven decisions about their predictive accuracy and reliability.
+
+![TensorFlow Visualization](/Images/TensorFlow_graph.png)
+
 ## CONCLUSIONS
 
 In our study of predicting drug addiction rehab success, we have found that neural networks excel at forecasting outcomes in drug rehabilitation programs. These models are adept at handling the myriad complex variables that influence an individual's ability to complete drug addiction recovery treatment. Factors such as personal history, socio-economic background, and psychological conditions, which traditionally complicate predictions, are effectively managed by neural networks, leading to more accurate forecasts.
