@@ -341,9 +341,9 @@ print(classification_report(y_test, y_pred))
 **Computational Cost:** Training Gradient Boosting models can be computationally expensive. Efficient use of resources and optimization techniques is essential.
 Gradient Boosting Classifiers are powerful models for various tasks, from binary classification to multi-class classification problems. Understanding the structure and training process is crucial for effectively applying and tuning these models.
 
-# GRADIENT BOOSTING CLASSIFIER STATISTICAL ANALYSIS
+**GRADIENT BOOSTING CLASSIFIER STATISTICAL ANALYSIS**
 
-![Gradient Boosting ROC](/Images/GBM_ROC_Score.png)
+![Gradient Boosting ROC](/Images/GBM_ROC.png)
 ![Gradient Boosting Training](/Images/GBM_Train.png)
 
 
