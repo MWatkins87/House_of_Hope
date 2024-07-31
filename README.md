@@ -582,19 +582,6 @@ Deep Learning with Python by François Chollet
 
 ## Tensorflow/Keras Statistical Results
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-
-┃ Layer (type) ┃ Output Shape ┃ Param # ┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
-
-│ dense_6 (Dense) │ (None, 100) │ 6,900 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-
-│ dense_7 (Dense) │ (None, 50) │ 5,050 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-
-│ dense_8 (Dense) │ (None, 3) │ 153 │
-└─────────────────────────────────┴────────────────────────┴───────────────┘
 
 Total params: 12,103 (47.28 KB)
 Trainable params: 12,103 (47.28 KB)
@@ -872,22 +859,12 @@ max    3.000000e+00
 
 The provided box plot visualization displays the distribution of values for multiple variables in my dataset, with each box representing a variable's interquartile range (IQR). The line inside each box represents the median, while whiskers extend to the minimum and maximum values within 1.5 times the IQR from the first and third quartiles. Outliers are displayed as individual points beyond these whiskers. The plot reveals significant variability and numerous outliers in many variables, indicating diverse data distributions and the presence of extreme values. Variables such as Education (EDUC) and Marital Status (MARSTAT) show a compact distribution with relatively fewer outliers, whereas Services (SERVICES) and Length of Stay (LOS) exhibit a wider range and more outliers, suggesting varied service usage and length of stay among individuals. Several variables, such as METHUSE, PSYPROB, TRNQFLG, BARBFLG, SEDHPFLG, and INHFLG, have distributions where values are clustered at specific points (e.g., 0 and 1), indicating their binary nature. Drug use flags, like OTCFLG and OTHERFLG, generally have low means and a high frequency of zero values, highlighting the infrequency of these drug uses. Overall, the visualization provides a comprehensive overview of my dataset's structure and variability, effectively summarizing the central tendency, spread, and outliers for each variable.
 
-Measures of Central Tendency
+1[Shape of Distribution](/Images/discriptive_statistics.png)
+
+**Measures of Central Tendency**
+
 Central tendency measures, such as the mean, median, and mode, are used to describe the central value of a dataset. The mean is the average value of a dataset and is sensitive to extreme values, making it useful for normally distributed data. The median is the middle value of a dataset and is robust to outliers, making it suitable for skewed data. The mode is the most frequent value in a dataset and is useful for categorical data. Together, these measures provide insights into the typical value of a dataset and its distribution.
 
-# # Measures of Central Tendency
-mean = data.mean() 
-median = data.median() 
-mode = data.mode() 
-
-print("\nMeasures of Central Tendency:") 
-print("Mean:") 
-print(mean) 
-print("\nMedian:") 
-print(median) 
-print("\nMode:") 
-print(mode) 
-Measures of Central Tendency:
 Mean:
 EDUC        2.907929
 MARSTAT     1.332656
@@ -900,7 +877,6 @@ DIVISION    4.603652
 REGION      2.412951
 IDU         0.232101
 ALCDRUG     1.964903
-Length: 69, dtype: float64
 
 Median:
 EDUC        3.0
@@ -914,7 +890,6 @@ DIVISION    5.0
 REGION      3.0
 IDU         0.0
 ALCDRUG     2.0
-Length: 69, dtype: float64
 
 Mode:
    EDUC  MARSTAT  SERVICES  LOS  PSOURCE  NOPRIOR  ARRESTS  EMPLOY  METHUSE  \
@@ -926,65 +901,40 @@ Mode:
    DIVISION  REGION  IDU  ALCDRUG  
 0         2       1    0        2  
 
-[1 rows x 69 columns]
-# Visualize Measures of Central Tendency
-plt.figure(figsize=(20, 10)) 
-plt.plot(mean, label="Mean", marker="o")
-plt.plot(median, label="Median", marker="o") 
-plt.plot(mode.iloc[0], label="Mode", marker="o") 
-plt.title("Measures of Central Tendency") 
-plt.legend() 
-plt.xticks(rotation=45) 
-plt.show()
+![Measure of Central Tendancy](/Images/measures_of_central_tendacies.png)
 
-# Visualize Measures of Central Tendency
-# plt.figure(figsize=(20, 10)) 
-# plt.plot(mean, label="Mean", marker="o")
-# plt.plot(median, label="Median", marker="o") 
-# plt.plot(mode.iloc[0], label="Mode", marker="o") 
-# plt.title("Measures of Central Tendency") 
-# plt.legend() 
-# plt.show() 
 The provided line plot visualization illustrates the measures of central tendency (mean, median, and mode) for various variables in my dataset, showing how they compare across these variables. For many variables, the mean, median, and mode are close to each other, indicating symmetric distributions, while notable differences for some variables suggest skewness. For instance, EDUC shows a roughly symmetric distribution with the mean, median, and mode around 3, whereas SERVICES and LOS exhibit positive skewness with higher means compared to medians and modes. Binary variables like METHUSE and PSYPROB reflect their binary nature with means and medians close to 0 or 1, and modes often at 0. Discrepancies between the measures for some variables indicate significant skewness and the presence of extreme values or outliers. Overall, the visualization provides a clear overview of the central tendency measures for each variable, highlighting the symmetry, skewness, and potential outliers in the dataset.
 
-Measures of Dispersion
+**Measures of Dispersion**
+
 Dispersion measures, such as the range, variance, standard deviation, and interquartile range (IQR), are used to describe the spread or variability of data in a dataset. The range is the difference between the maximum and minimum values, providing a simple measure of spread. The variance and standard deviation quantify the average squared deviation of data points from the mean, with the standard deviation being the square root of the variance. The IQR is the range of values within the middle 50% of the dataset, providing a robust measure of spread that is less sensitive to extreme values.
 
-# Measures of Dispersion
-std_deviation = data.std() 
-variance = data.var() 
-range = data.max() - data.min() 
-iqr = stats.iqr(data) 
 
-print(f"\nStandard Deviation: {std_deviation}") 
-print(f"Variance: {variance}") 
-print(f"Range: {range}") 
-print(f"IQR: {iqr}") 
-Standard Deviation: EDUC        0.940180
+**Standard Deviation:**
+
+EDUC        0.940180
 MARSTAT     1.210695
 SERVICES    1.951121
 LOS         2.396274
 PSOURCE     2.615543
-              ...   
+               
 OTHERFLG    0.181230
 DIVISION    2.594764
 REGION      1.148536
 IDU         0.422173
 ALCDRUG     0.837784
-Length: 69, dtype: float64
-Variance: EDUC        0.883939
+
 MARSTAT     1.465782
 SERVICES    3.806874
 LOS         5.742130
 PSOURCE     6.841064
-              ...   
+             
 OTHERFLG    0.032844
 DIVISION    6.732800
 REGION      1.319134
 IDU         0.178230
 ALCDRUG     0.701881
-Length: 69, dtype: float64
-Range: EDUC        4
+
 MARSTAT     4
 SERVICES    7
 LOS         7
@@ -995,40 +945,17 @@ DIVISION    9
 REGION      4
 IDU         1
 ALCDRUG     3
-Length: 69, dtype: int64
-IQR: 2.0
-# Visualize Measures of Dispersion
-plt.figure(figsize=(20, 10)) 
-plt.plot(std_deviation, label="Standard Deviation", marker="o") 
-plt.plot(variance, label="Variance", marker="o") 
-plt.plot(range, label="Range", marker="o") 
-plt.plot(iqr, label="IQR", marker="o") 
-plt.title("Measures of Dispersion") 
-plt.legend() 
-plt.xticks(rotation=45)
-plt.show()
 
-# Visualize Measures of Dispersion
-# plt.figure(figsize=(20, 10)) 
-# plt.plot(std_deviation, label="Standard Deviation", marker="o") 
-# plt.plot(variance, label="Variance", marker="o") 
-# plt.plot(range, label="Range", marker="o") 
-# plt.plot(iqr, label="IQR", marker="o") 
-# plt.title("Measures of Dispersion") 
-# plt.legend() 
-# plt.show() 
+![Measures of Dispersion](/Images/measures_of_dispersion.png)
+
 The provided line plot visualization illustrates the measures of dispersion (standard deviation, variance, range, and interquartile range) for various variables in my dataset. The standard deviation and variance measures follow similar patterns, reflecting the spread of the data around the mean, with variables like SERVICES and LOS showing high values, indicating a wide spread. The range highlights the difference between the maximum and minimum values, with some variables, such as SERVICES and LOS, having high ranges, reflecting a wide spread of values. The interquartile range (IQR) varies significantly for some variables, indicating the presence of outliers and skewed distributions. Notably, some variables exhibit extreme values in their dispersion measures, such as a variance spike around 35, indicating extreme variability. Binary variables like IDU and drug use flags have low dispersion measures, as their values are confined to a small range. Overall, the visualization provides a comprehensive overview of the dataset's variability, highlighting the spread and consistency of each variable and identifying areas with significant variability or outliers.
 
-Shape of the Distribution
+**Shape of the Distribution**
+
 The shape of a distribution refers to its overall pattern or form, such as symmetry, skewness, or modality. Symmetric distributions are mirror images around the center, with equal tails on both sides. Skewed distributions have a longer tail on one side, indicating an imbalance in the data. Bimodal distributions have two distinct peaks, while multimodal distributions have multiple peaks. Understanding the shape of a distribution is crucial for interpreting the data and selecting appropriate statistical analyses.
 
-# Shape of the Distribution
-skewness = data.skew() 
-kurtosis = data.kurt() 
-
-print(f"\nSkewness: {skewness}") 
-print(f"Kurtosis: {kurtosis}")
-Skewness: EDUC        0.192350
+Skewness: 
+EDUC        0.192350
 MARSTAT     1.110967
 SERVICES   -0.981715
 LOS         0.858889
@@ -1052,31 +979,15 @@ REGION      -1.424036
 IDU         -0.389282
 ALCDRUG     -0.032413
 Length: 69, dtype: float64
-# Visualize Shape of the Distribution
-plt.figure(figsize=(20, 10)) 
-plt.plot(skewness, label="Skewness", marker="o") 
-plt.plot(kurtosis, label="Kurtosis", marker="o") 
-plt.title("Shape of the Distribution")
-plt.legend()
-plt.xticks(rotation=45)
-plt.show()
 
-# Visualize Shape of the Distribution
-# plt.figure(figsize=(20, 10)) 
-# plt.plot(skewness, label="Skewness", marker="o") 
-# plt.plot(kurtosis, label="Kurtosis", marker="o") 
-# plt.title("Shape of the Distribution")
-# plt.legend()
-# plt.show()
+![Shape of the Distribution](/Images/shape_of_the_distribution.png)
+
 The provided line plot visualization illustrates the shape of the distribution for various variables in my dataset, represented by skewness and kurtosis. Most variables have skewness close to zero, indicating relatively symmetric distributions, although some, like MARSTAT and IDU, show higher skewness, suggesting asymmetry. Similarly, kurtosis values are close to zero or negative for most variables, indicating relatively flat distributions, with the notable exception of OTHERFLG, which has an extremely high kurtosis value around 3000, indicating significant outliers or a very peaked distribution. This visualization highlights the overall symmetry and peakedness of the dataset's variables, with most showing normal-like distributions, and clearly identifies variables with significant outliers or extreme values.
 
-Frequency Distribution
+**Frequency Distribution**
+
 Frequency of distribution refers to how often values occur in a dataset and is essential for understanding the data's patterns and characteristics. A frequency distribution table summarizes the number of occurrences of each value or range of values in a dataset, providing insights into the data's distribution and variability. Frequency distributions can be displayed using histograms, bar charts, or frequency tables, making it easier to visualize and interpret the data.
 
-# Frequency Distribution
-print("\nFrequency Distribution:")
-print(data.value_counts())
-Frequency Distribution:
 EDUC  MARSTAT  SERVICES  LOS  PSOURCE  NOPRIOR  ARRESTS  EMPLOY  METHUSE  PSYPROB  PREG  GENDER  VET  LIVARAG  DAYWAIT  SERVICES_D  REASON  EMPLOY_D  LIVARAG_D  ARRESTS_D  DSMCRIT  AGE  RACE  ETHNIC  PRIMINC  SUB1  SUB2  SUB3  SUB1_D  SUB2_D  SUB3_D  ROUTE1  ROUTE2  ROUTE3  FREQ1  FREQ2  FREQ3  FREQ1_D  FREQ2_D  FREQ3_D  FRSTUSE1  FRSTUSE2  FRSTUSE3  HLTHINS  PRIMPAY  FREQ_ATND_SELF_HELP  FREQ_ATND_SELF_HELP_D  ALCFLG  COKEFLG  MARFLG  HERFLG  METHFLG  OPSYNFLG  PCPFLG  HALLFLG  MTHAMFLG  AMPHFLG  STIMFLG  BENZFLG  TRNQFLG  BARBFLG  SEDHPFLG  INHFLG  OTCFLG  OTHERFLG  DIVISION  REGION  IDU  ALCDRUG
 2     0        7         1    1        1        0        0       2        2        2     1       2    1        0        7           1       0         1          0          5        6    5     4       4        0     1     1     0       1       1       0       0       0       1      1      1      1        1        1        3         3         3          2       4        3                    3                      0       0        0       0       0        0         0       0        0         0        0        0        0        0        0         0       0       0         8         4       0    0          521
                                        0        0        0       2        2        2     1       2    1        0        7           1       0         1          0          5        5    5     4       4        0     1     1     0       1       1       0       0       0       1      1      1      1        1        1        3         3         3          2       4        3                    3                      0       0        0       0       0        0         0       0        0         0        0        0        0        0        0         0       0       0         8         4       0    0          474
@@ -1089,10 +1000,11 @@ EDUC  MARSTAT  SERVICES  LOS  PSOURCE  NOPRIOR  ARRESTS  EMPLOY  METHUSE  PSYPRO
                                                                                                                                                                                                                                                                    2       1       3      2      1      1        1        1        4         4         5         -9       1        3                    1                      0       1        0       1       0        0         0       0        0         0        0        1        0        0        0         0       0       0         2         1       1    2            1
                                                                                                                                                                                                                                                                            0       3      3      1      1        1        1        5         2         3         -9       1        3                    1                      0       0        1       1       0        0         0       0        0         0        0        0        0        0        0         0       0       0         2         1       1    2            1
 5     4        8         8    6        1        0        1       1        2        2     2       2    3        1        8           0       1         3          0          12       9    5     4       1        0     1     1     0       1       1       4       0       0       3      1      1      1        1        1        7         3         3         -9       4        1                    4                      0       0        0       1       0        0         0       0        0         0        0        0        0        0        0         0       0       0         2         1       1    2            1
-Name: count, Length: 5711258, dtype: int64
+
 The frequency distribution table summarizes the occurrence counts for various combinations of categorical and binary variables in my dataset. Notably, the most common profiles include combinations such as EDUC=2, MARSTAT=0, SERVICES=7, LOS=1, PSOURCE=1, NOPRIOR=1, ARRESTS=0, EMPLOY=0, METHUSE=2, and PSYPROB=2, with specific variables consistently showing up together in the most frequent profiles. For instance, the combination EDUC=2, MARSTAT=0, SERVICES=7, LOS=1, PSOURCE=1, NOPRIOR=1, ARRESTS=0, EMPLOY=0, METHUSE=2, and PSYPROB=2 appears multiple times with slightly varying counts, suggesting common demographic and treatment patterns. Variables like IDU and ALCDRUG show binary distributions, typically centered around 0, indicating that non-intravenous drug use and alcohol-related issues are less frequent in the dataset. The table effectively highlights the most common profiles and the interplay between different categorical and binary variables in the dataset.
 
-Correlation Analysis and Human Language
+**Correlation Analysis and Human Language**
+
 The blocks of code below (reason 1, reason 2, reason 3, reason 4, and reason 5) is a series of if-else statements that checks the value of the variable reason1 and assigns a corresponding reason based on the value. The reasons are then printed in human-readable language to explain the correlation between the variables. This approach provides a structured and interpretable way to analyze correlations and present the results in a clear and understandable format. By assigning specific reasons to each correlation, the analysis becomes more accessible to non-technical audiences, enabling stakeholders to grasp the relationships between variables and make informed decisions based on the findings.
 
 ## CONCLUSIONS
