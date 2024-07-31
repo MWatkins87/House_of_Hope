@@ -343,7 +343,7 @@ Gradient Boosting Classifiers are powerful models for various tasks, from binary
 
 **GRADIENT BOOSTING CLASSIFIER STATISTICAL ANALYSIS**
 
-![Gradient Boosting ROC](/Images/GBM_ROC.png)
+![Gradient Boosting ROC](/Images/GMB_ROC.png)
 ![Gradient Boosting Training](/Images/GBM_Train.png)
 
 
