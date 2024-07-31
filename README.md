@@ -582,20 +582,6 @@ Deep Learning with Python by François Chollet
 
 ## Tensorflow/Keras Statistical Results
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-
-┃ Layer (type) ┃ Output Shape ┃ Param # ┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
-
-│ dense_6 (Dense) │ (None, 100) │ 6,900 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-
-│ dense_7 (Dense) │ (None, 50) │ 5,050 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-
-│ dense_8 (Dense) │ (None, 3) │ 153 │
-└─────────────────────────────────┴────────────────────────┴───────────────┘
-
 Total params: 12,103 (47.28 KB)
 Trainable params: 12,103 (47.28 KB)
 Non-trainable params: 0 (0.00 B)
@@ -795,6 +781,8 @@ To learn more about PyTorch, consider exploring the following resources:
 **PyTorch Documentation**
 
 Deep Learning with PyTorch by Eli Stevens, Luca Antiga, and Thomas Viehmann
+
+## STATISTICAL ANALYSIS
 
 ## CONCLUSIONS
 
