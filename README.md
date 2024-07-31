@@ -289,8 +289,6 @@ Gradient Boosting Classifier (GBC) is a powerful machine learning algorithm that
 
 **Import Libraries**
 
-python
-
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -365,21 +363,21 @@ Understanding the Multilayer Perceptron (MLP) model is fundamental in neural net
 
 **Key Concepts of MLP**
 
-**1. Structure of MLP**
+**Structure of MLP**
    Input Layer: The first layer that receives the input data. Each node in this layer represents a feature in the input data.
    Hidden Layers: Intermediate layers between the input and output layers. These layers perform computations and learn the representations of the input data.
    Output Layer: The final layer that produces the prediction or classification result. The number of nodes in this layer depends on the nature of the task (e.g., one node for binary classification, multiple nodes for multi-class classification).
    
-**2. Activation Functions**
+**Activation Functions**
    Activation functions introduce non-linearity into the network, enabling it to learn complex patterns.
    Sigmoid: σ(x)=11+e−x\sigma(x) = \frac{1}{1 + e^{-x}}σ(x)=1+e−x1​
    ReLU (Rectified Linear Unit): ReLU(x)=max⁡(0,x)\text{ReLU}(x) = \max(0, x)ReLU(x)=max(0,x)
    Tanh: tanh⁡(x)=ex−e−xex+e−x\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}tanh(x)=ex+e−xex−e−x​
    
-**3. Forward Propagation**
+**Forward Propagation**
    In forward propagation, the input data is passed through the network layer by layer. Each neuron calculates a weighted sum of its inputs, applies the activation function, and passes the result to the next layer.
    
-**4. Backpropagation**
+**Backpropagation**
    Backpropagation is the process of training the network. It involves:
    
    *Calculating the Loss:* Using a loss function (e.g., Mean Squared Error for regression, Cross-Entropy for classification) to measure the difference between the predicted and actual values.
@@ -388,11 +386,10 @@ Understanding the Multilayer Perceptron (MLP) model is fundamental in neural net
    
    *Updating Weights:* Adjusting the weights using optimization algorithms like Gradient Descent to minimize the loss.
    
-**9. Training the MLP**
+**Training the MLP**
    Training involves multiple iterations (epochs) where forward and backpropagation steps are repeated, continuously improving the model’s weights to minimize the loss.
 
-Import Libraries
-python
+**Import Libraries**
 
 import numpy as np
 import pandas as pd
@@ -421,8 +418,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
-Step 3: Initialize and Train the MLP
-python
+
+**Initialize and Train the MLP**
 
 **Initialize the MLPClassifier**
 
@@ -466,7 +463,7 @@ MLPs are powerful models for various tasks, from simple binary classification to
 
 ![MLP Loss](/Images/MLP_clean_df_accuracy.png)
 
-## TensorFlow/Keras model
+## TENSORFLOW/KERAS MODEL
 
 TensorFlow and Keras are popular frameworks for building and training neural networks. Keras is a high-level API that runs on top of TensorFlow, making it easier to build and train models. Let's break down the basics of using TensorFlow and Keras to build neural networks, particularly focusing on the core concepts and providing a simple example.
 
@@ -486,8 +483,7 @@ Sequential Model: A linear stack of layers.
 
 **Prediction:** Using the predict method to make predictions on new data.Building and Training a Simple Neural Network with Keras
 
-Import Libraries
-python
+**Import Libraries**
 
 import numpy as np
 import pandas as pd
@@ -497,8 +493,8 @@ from tensorflow.keras.layers import Dense
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
-Step 2: Load and Preprocess Data
-python
+
+**Load and Preprocess Data**
 
 **Load the dataset**
 
@@ -538,8 +534,8 @@ Step 5: Train the Model
 python
 
 history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
-Step 6: Evaluate the Model
-python
+
+**Evaluate the Model**
 
 **Note:** The model initially utilize a categorical_crossentropy optimizer that was replace by a binary_crossentropy optimizer with the hypothesis that the binary optimizer would provide better accuracy; however, the binary optimizer resulted in a 20 point drop in accuracy. As a result, the final model utilizes a categorical_crossentropy optimizer.
 
@@ -636,7 +632,7 @@ accuracy loss val_accuracy val_loss
 
 ![Keras Loss](/Images/keras_loss.png)
 
-## PyTorch Model
+## PYTORCH MODEL
 
 PyTorch is a popular framework for building and training neural networks, known for its flexibility and ease of use. Let's break down the basics of using PyTorch to build neural networks, focusing on the core concepts and providing a simple example.
 
@@ -663,8 +659,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 Step 2: Load and Preprocess Data
-
-python
 
 **Load the dataset**
 
@@ -693,8 +687,6 @@ y_train = torch.tensor(y_train.values, dtype=torch.float32).unsqueeze(1)
 y_test = torch.tensor(y_test.values, dtype=torch.float32).unsqueeze(1)
 Step 3: Build the Model
 
-python
-
 class SimpleNN(nn.Module):
     def __init__(self):
         super(SimpleNN, self).__init__()
@@ -713,15 +705,11 @@ model = SimpleNN()
 
 **Step 4: Compile the Model**
 
-python
-
 criterion = nn.BCELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 **Step 5: Train the Model**
 
-python
-Copy code
 num_epochs = 50
 batch_size = 32
 train_loader = torch.utils.data.DataLoader(
@@ -807,45 +795,45 @@ Descriptive statistics are used to describe the basic features of the data in a 
 
 **Max:** The maximum value in the dataset or for a particular variable. It represents the highest observation.
 
-               EDUC       MARSTAT      SERVICES           LOS       PSOURCE  \
-count  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
-mean   2.907929e+00  1.332656e+00  5.506965e+00  2.880227e+00  3.253722e+00   
-std    9.401800e-01  1.210695e+00  1.951121e+00  2.396274e+00  2.615543e+00   
-min    1.000000e+00  0.000000e+00  1.000000e+00  1.000000e+00  1.000000e+00   
-25%    2.000000e+00  1.000000e+00  4.000000e+00  1.000000e+00  1.000000e+00   
-50%    3.000000e+00  1.000000e+00  7.000000e+00  1.000000e+00  2.000000e+00   
-75%    3.000000e+00  2.000000e+00  7.000000e+00  5.000000e+00  6.000000e+00   
-max    5.000000e+00  4.000000e+00  8.000000e+00  8.000000e+00  7.000000e+00   
+               EDUC          MARSTAT         SERVICES              LOS          PSOURCE  \
+count  6.441469e+06     6.441469e+06     6.441469e+06     6.441469e+06     6.441469e+06   
+mean   2.907929e+00     1.332656e+00     5.506965e+00     2.880227e+00     3.253722e+00   
+std    9.401800e-01     1.210695e+00     1.951121e+00     2.396274e+00     2.615543e+00   
+min    1.000000e+00     0.000000e+00     1.000000e+00     1.000000e+00     1.000000e+00   
+25%    2.000000e+00     1.000000e+00     4.000000e+00     1.000000e+00     1.000000e+00   
+50%    3.000000e+00     1.000000e+00     7.000000e+00     1.000000e+00     2.000000e+00   
+75%    3.000000e+00     2.000000e+00     7.000000e+00     5.000000e+00     6.000000e+00   
+max    5.000000e+00     4.000000e+00     8.000000e+00     8.000000e+00     7.000000e+00   
 
-            NOPRIOR       ARRESTS        EMPLOY       METHUSE       PSYPROB  \
-count  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
-mean   5.594125e-01  7.921594e-02  2.706031e+00  1.708763e+00  1.492362e+00   
-std    4.964576e-01  3.081618e-01  1.277159e+00  6.115860e-01  4.999417e-01   
-min    0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  1.000000e+00   
-25%    0.000000e+00  0.000000e+00  2.000000e+00  2.000000e+00  1.000000e+00   
-50%    1.000000e+00  0.000000e+00  3.000000e+00  2.000000e+00  1.000000e+00   
-75%    1.000000e+00  0.000000e+00  4.000000e+00  2.000000e+00  2.000000e+00   
-max    1.000000e+00  2.000000e+00  4.000000e+00  2.000000e+00  2.000000e+00   
+            NOPRIOR          ARRESTS           EMPLOY          METHUSE          PSYPROB  \
+count  6.441469e+06     6.441469e+06     6.441469e+06     6.441469e+06     6.441469e+06   
+mean   5.594125e-01     7.921594e-02     2.706031e+00     1.708763e+00     1.492362e+00   
+std    4.964576e-01     3.081618e-01     1.277159e+00     6.115860e-01     4.999417e-01   
+min    0.000000e+00     0.000000e+00     0.000000e+00     0.000000e+00     1.000000e+00   
+25%    0.000000e+00     0.000000e+00     2.000000e+00     2.000000e+00     1.000000e+00   
+50%    1.000000e+00     0.000000e+00     3.000000e+00     2.000000e+00     1.000000e+00   
+75%    1.000000e+00     0.000000e+00     4.000000e+00     2.000000e+00     2.000000e+00   
+max    1.000000e+00     2.000000e+00     4.000000e+00     2.000000e+00     2.000000e+00   
 
-       ...       TRNQFLG       BARBFLG      SEDHPFLG        INHFLG  \
-count  ...  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
-mean   ...  3.483677e-04  1.178924e-03  5.058939e-03  1.152843e-03   
-std    ...  1.866136e-02  3.431521e-02  7.094609e-02  3.393396e-02   
-min    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
-25%    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
-50%    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
-75%    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
-max    ...  1.000000e+00  1.000000e+00  1.000000e+00  1.000000e+00   
+       ...       TRNQFLG          BARBFLG         SEDHPFLG           INHFLG  \
+count  ...  6.441469e+06     6.441469e+06     6.441469e+06     6.441469e+06   
+mean   ...  3.483677e-04     1.178924e-03     5.058939e-03     1.152843e-03   
+std    ...  1.866136e-02     3.431521e-02     7.094609e-02     3.393396e-02   
+min    ...  0.000000e+00     0.000000e+00     0.000000e+00     0.000000e+00   
+25%    ...  0.000000e+00     0.000000e+00     0.000000e+00     0.000000e+00   
+50%    ...  0.000000e+00     0.000000e+00     0.000000e+00     0.000000e+00   
+75%    ...  0.000000e+00     0.000000e+00     0.000000e+00     0.000000e+00   
+max    ...  1.000000e+00     1.000000e+00     1.000000e+00     1.000000e+00   
 
-             OTCFLG      OTHERFLG      DIVISION        REGION           IDU  \
-count  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
-mean   1.290544e-03  3.400032e-02  4.603652e+00  2.412951e+00  2.321014e-01   
-std    3.590096e-02  1.812300e-01  2.594764e+00  1.148536e+00  4.221734e-01   
-min    0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
-25%    0.000000e+00  0.000000e+00  2.000000e+00  1.000000e+00  0.000000e+00   
-50%    0.000000e+00  0.000000e+00  5.000000e+00  3.000000e+00  0.000000e+00   
-75%    0.000000e+00  0.000000e+00  7.000000e+00  3.000000e+00  0.000000e+00   
-max    1.000000e+00  1.000000e+00  9.000000e+00  4.000000e+00  1.000000e+00   
+             OTCFLG         OTHERFLG         DIVISION           REGION              IDU  \
+count  6.441469e+06     6.441469e+06     6.441469e+06     6.441469e+06     6.441469e+06   
+mean   1.290544e-03     3.400032e-02     4.603652e+00     2.412951e+00     2.321014e-01   
+std    3.590096e-02     1.812300e-01     2.594764e+00     1.148536e+00     4.221734e-01   
+min    0.000000e+00     0.000000e+00     0.000000e+00     0.000000e+00     0.000000e+00   
+25%    0.000000e+00     0.000000e+00     2.000000e+00     1.000000e+00     0.000000e+00   
+50%    0.000000e+00     0.000000e+00     5.000000e+00     3.000000e+00     0.000000e+00   
+75%    0.000000e+00     0.000000e+00     7.000000e+00     3.000000e+00     0.000000e+00   
+max    1.000000e+00     1.000000e+00     9.000000e+00     4.000000e+00     1.000000e+00   
 
             ALCDRUG  
 count  6.441469e+06  
@@ -859,7 +847,7 @@ max    3.000000e+00
 
 The provided box plot visualization displays the distribution of values for multiple variables in my dataset, with each box representing a variable's interquartile range (IQR). The line inside each box represents the median, while whiskers extend to the minimum and maximum values within 1.5 times the IQR from the first and third quartiles. Outliers are displayed as individual points beyond these whiskers. The plot reveals significant variability and numerous outliers in many variables, indicating diverse data distributions and the presence of extreme values. Variables such as Education (EDUC) and Marital Status (MARSTAT) show a compact distribution with relatively fewer outliers, whereas Services (SERVICES) and Length of Stay (LOS) exhibit a wider range and more outliers, suggesting varied service usage and length of stay among individuals. Several variables, such as METHUSE, PSYPROB, TRNQFLG, BARBFLG, SEDHPFLG, and INHFLG, have distributions where values are clustered at specific points (e.g., 0 and 1), indicating their binary nature. Drug use flags, like OTCFLG and OTHERFLG, generally have low means and a high frequency of zero values, highlighting the infrequency of these drug uses. Overall, the visualization provides a comprehensive overview of my dataset's structure and variability, effectively summarizing the central tendency, spread, and outliers for each variable.
 
-1[Shape of Distribution](/Images/discriptive_statistics.png)
+1[Shape of Distribution](/Images/descriptive_statistics.png)
 
 **Measures of Central Tendency**
 
@@ -901,7 +889,7 @@ Mode:
    DIVISION  REGION  IDU  ALCDRUG  
 0         2       1    0        2  
 
-![Measure of Central Tendancy](/Images/measures_of_central_tendacies.png)
+![Measure of Central Tendancy](/Images/measures_of_central_tendancy.png)
 
 The provided line plot visualization illustrates the measures of central tendency (mean, median, and mode) for various variables in my dataset, showing how they compare across these variables. For many variables, the mean, median, and mode are close to each other, indicating symmetric distributions, while notable differences for some variables suggest skewness. For instance, EDUC shows a roughly symmetric distribution with the mean, median, and mode around 3, whereas SERVICES and LOS exhibit positive skewness with higher means compared to medians and modes. Binary variables like METHUSE and PSYPROB reflect their binary nature with means and medians close to 0 or 1, and modes often at 0. Discrepancies between the measures for some variables indicate significant skewness and the presence of extreme values or outliers. Overall, the visualization provides a clear overview of the central tendency measures for each variable, highlighting the symmetry, skewness, and potential outliers in the dataset.
 
