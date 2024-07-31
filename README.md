@@ -259,7 +259,7 @@ The neural network predicts "1" for success and "0" for failure.
 A correlation matrix is generated from a subset of variables that correspond to actions the prospective resident could take to improve their chances of being accepted into the program. The top five correlations are formatted into a statement that lists actionable items the client can focus on to enhance their likelihood of admission.
 
 
-# GRADIENT BOOSTING CLASSIFIER
+## GRADIENT BOOSTING CLASSIFIER
 
 Gradient Boosting Classifier (GBC) is a powerful machine learning algorithm that combines the predictions of several base estimators to improve robustness over a single estimator. This technique is part of ensemble learning, where multiple models are trained and combined to solve complex problems and improve the accuracy and performance of the model. Here's a detailed overview to help you grasp the concept better.
 
@@ -648,8 +648,6 @@ PyTorch is a popular framework for building and training neural networks, known 
 
 **Import Libraries**
 
-python
-
 import numpy as np
 import pandas as pd
 import torch
@@ -847,7 +845,7 @@ max    3.000000e+00
 
 The provided box plot visualization displays the distribution of values for multiple variables in my dataset, with each box representing a variable's interquartile range (IQR). The line inside each box represents the median, while whiskers extend to the minimum and maximum values within 1.5 times the IQR from the first and third quartiles. Outliers are displayed as individual points beyond these whiskers. The plot reveals significant variability and numerous outliers in many variables, indicating diverse data distributions and the presence of extreme values. Variables such as Education (EDUC) and Marital Status (MARSTAT) show a compact distribution with relatively fewer outliers, whereas Services (SERVICES) and Length of Stay (LOS) exhibit a wider range and more outliers, suggesting varied service usage and length of stay among individuals. Several variables, such as METHUSE, PSYPROB, TRNQFLG, BARBFLG, SEDHPFLG, and INHFLG, have distributions where values are clustered at specific points (e.g., 0 and 1), indicating their binary nature. Drug use flags, like OTCFLG and OTHERFLG, generally have low means and a high frequency of zero values, highlighting the infrequency of these drug uses. Overall, the visualization provides a comprehensive overview of my dataset's structure and variability, effectively summarizing the central tendency, spread, and outliers for each variable.
 
-1[Shape of Distribution](/Images/descriptive_statistics.png)
+![Descriptive Statistics](/Images/descriptive_statistics.png)
 
 **Measures of Central Tendency**
 
