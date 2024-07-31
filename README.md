@@ -275,7 +275,7 @@ Gradient Boosting Classifier (GBC) is a powerful machine learning algorithm that
 
 **Building and Training a Gradient Boosting Classifier**
 
-Import Libraries
+**Import Libraries**
 
 python
 
@@ -285,9 +285,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import classification_report, confusion_matrix
-Step 2: Load and Preprocess the Data
 
-python
+**Load and Preprocess the Data**
 
 **Load the dataset**
 data = pd.read_csv('data.csv')
@@ -305,7 +304,6 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 Step 3: Initialize and Train the Gradient Boosting Classifier
 
-python
 
 **Initialize the Gradient Boosting Classifier**
 
@@ -313,9 +311,8 @@ gbc = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=
 
 **Train the model**
 gbc.fit(X_train, y_train)
-Step 4: Evaluate the Model
 
-python
+**Evaluate the Model**
 
 **Make predictions**
 
@@ -343,6 +340,12 @@ print(classification_report(y_test, y_pred))
 
 **Computational Cost:** Training Gradient Boosting models can be computationally expensive. Efficient use of resources and optimization techniques is essential.
 Gradient Boosting Classifiers are powerful models for various tasks, from binary classification to multi-class classification problems. Understanding the structure and training process is crucial for effectively applying and tuning these models.
+
+# GRADIENT BOOSTING CLASSIFIER STATISTICAL ANALYSIS
+
+![Gradient Boosting ROC](/Images/GradientBoostingMachines_(GBMs)_Classification_ROC_AUC_Score.png)
+![Gradient Boosting Training](/Images/GradientBoostingMachine_(GBMs)_Train.png)
+
 
 ## MULTI-LEVEL PERCEPTRON (MLP) MODEL
 
