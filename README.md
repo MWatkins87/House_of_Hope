@@ -796,6 +796,305 @@ To learn more about PyTorch, consider exploring the following resources:
 
 Deep Learning with PyTorch by Eli Stevens, Luca Antiga, and Thomas Viehmann
 
+## Statistical Analysis
+
+**Descriptive Statistics**
+
+Descriptive statistics are used to describe the basic features of the data in a study. They provide simple summaries about the sample and the measures. Together with simple graphics analysis, they form the basis of virtually every quantitative analysis of data.
+
+**Descriptive Analysis Values**
+
+**Count:** The total number of observations in the dataset or for a particular variable.
+
+**Mean:** The average value of the observations. It is calculated by summing all the values and then dividing by the count.
+
+**Std (Standard Deviation):**: A measure of the amount of variation or dispersion in a set of values. A low standard deviation indicates that the values tend to be close to the mean, while a high standard deviation indicates that the values are spread out over a wider range.
+
+**Min:** The minimum value in the dataset or for a particular variable. It represents the lowest observation.
+
+**25% (First Quartile or Q1):** The value below which 25% of the observations fall. It is also known as the first quartile.
+
+**50% (Second Quartile or Q2):** The middle value of the dataset. It is the value below which 50% of the observations fall. In a sorted dataset, it is the value that divides the dataset into two equal halves.
+
+**75% (Third Quartile or Q3):** The value below which 75% of the observations fall. It is also known as the third quartile.
+
+**Max:** The maximum value in the dataset or for a particular variable. It represents the highest observation.
+
+               EDUC       MARSTAT      SERVICES           LOS       PSOURCE  \
+count  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
+mean   2.907929e+00  1.332656e+00  5.506965e+00  2.880227e+00  3.253722e+00   
+std    9.401800e-01  1.210695e+00  1.951121e+00  2.396274e+00  2.615543e+00   
+min    1.000000e+00  0.000000e+00  1.000000e+00  1.000000e+00  1.000000e+00   
+25%    2.000000e+00  1.000000e+00  4.000000e+00  1.000000e+00  1.000000e+00   
+50%    3.000000e+00  1.000000e+00  7.000000e+00  1.000000e+00  2.000000e+00   
+75%    3.000000e+00  2.000000e+00  7.000000e+00  5.000000e+00  6.000000e+00   
+max    5.000000e+00  4.000000e+00  8.000000e+00  8.000000e+00  7.000000e+00   
+
+            NOPRIOR       ARRESTS        EMPLOY       METHUSE       PSYPROB  \
+count  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
+mean   5.594125e-01  7.921594e-02  2.706031e+00  1.708763e+00  1.492362e+00   
+std    4.964576e-01  3.081618e-01  1.277159e+00  6.115860e-01  4.999417e-01   
+min    0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  1.000000e+00   
+25%    0.000000e+00  0.000000e+00  2.000000e+00  2.000000e+00  1.000000e+00   
+50%    1.000000e+00  0.000000e+00  3.000000e+00  2.000000e+00  1.000000e+00   
+75%    1.000000e+00  0.000000e+00  4.000000e+00  2.000000e+00  2.000000e+00   
+max    1.000000e+00  2.000000e+00  4.000000e+00  2.000000e+00  2.000000e+00   
+
+       ...       TRNQFLG       BARBFLG      SEDHPFLG        INHFLG  \
+count  ...  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
+mean   ...  3.483677e-04  1.178924e-03  5.058939e-03  1.152843e-03   
+std    ...  1.866136e-02  3.431521e-02  7.094609e-02  3.393396e-02   
+min    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
+25%    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
+50%    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
+75%    ...  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
+max    ...  1.000000e+00  1.000000e+00  1.000000e+00  1.000000e+00   
+
+             OTCFLG      OTHERFLG      DIVISION        REGION           IDU  \
+count  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06  6.441469e+06   
+mean   1.290544e-03  3.400032e-02  4.603652e+00  2.412951e+00  2.321014e-01   
+std    3.590096e-02  1.812300e-01  2.594764e+00  1.148536e+00  4.221734e-01   
+min    0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00   
+25%    0.000000e+00  0.000000e+00  2.000000e+00  1.000000e+00  0.000000e+00   
+50%    0.000000e+00  0.000000e+00  5.000000e+00  3.000000e+00  0.000000e+00   
+75%    0.000000e+00  0.000000e+00  7.000000e+00  3.000000e+00  0.000000e+00   
+max    1.000000e+00  1.000000e+00  9.000000e+00  4.000000e+00  1.000000e+00   
+
+            ALCDRUG  
+count  6.441469e+06  
+mean   1.964903e+00  
+std    8.377836e-01  
+min    0.000000e+00  
+25%    2.000000e+00  
+50%    2.000000e+00  
+75%    3.000000e+00  
+max    3.000000e+00  
+
+The provided box plot visualization displays the distribution of values for multiple variables in my dataset, with each box representing a variable's interquartile range (IQR). The line inside each box represents the median, while whiskers extend to the minimum and maximum values within 1.5 times the IQR from the first and third quartiles. Outliers are displayed as individual points beyond these whiskers. The plot reveals significant variability and numerous outliers in many variables, indicating diverse data distributions and the presence of extreme values. Variables such as Education (EDUC) and Marital Status (MARSTAT) show a compact distribution with relatively fewer outliers, whereas Services (SERVICES) and Length of Stay (LOS) exhibit a wider range and more outliers, suggesting varied service usage and length of stay among individuals. Several variables, such as METHUSE, PSYPROB, TRNQFLG, BARBFLG, SEDHPFLG, and INHFLG, have distributions where values are clustered at specific points (e.g., 0 and 1), indicating their binary nature. Drug use flags, like OTCFLG and OTHERFLG, generally have low means and a high frequency of zero values, highlighting the infrequency of these drug uses. Overall, the visualization provides a comprehensive overview of my dataset's structure and variability, effectively summarizing the central tendency, spread, and outliers for each variable.
+
+Measures of Central Tendency
+Central tendency measures, such as the mean, median, and mode, are used to describe the central value of a dataset. The mean is the average value of a dataset and is sensitive to extreme values, making it useful for normally distributed data. The median is the middle value of a dataset and is robust to outliers, making it suitable for skewed data. The mode is the most frequent value in a dataset and is useful for categorical data. Together, these measures provide insights into the typical value of a dataset and its distribution.
+
+# # Measures of Central Tendency
+mean = data.mean() 
+median = data.median() 
+mode = data.mode() 
+
+print("\nMeasures of Central Tendency:") 
+print("Mean:") 
+print(mean) 
+print("\nMedian:") 
+print(median) 
+print("\nMode:") 
+print(mode) 
+Measures of Central Tendency:
+Mean:
+EDUC        2.907929
+MARSTAT     1.332656
+SERVICES    5.506965
+LOS         2.880227
+PSOURCE     3.253722
+              ...   
+OTHERFLG    0.034000
+DIVISION    4.603652
+REGION      2.412951
+IDU         0.232101
+ALCDRUG     1.964903
+Length: 69, dtype: float64
+
+Median:
+EDUC        3.0
+MARSTAT     1.0
+SERVICES    7.0
+LOS         1.0
+PSOURCE     2.0
+           ... 
+OTHERFLG    0.0
+DIVISION    5.0
+REGION      3.0
+IDU         0.0
+ALCDRUG     2.0
+Length: 69, dtype: float64
+
+Mode:
+   EDUC  MARSTAT  SERVICES  LOS  PSOURCE  NOPRIOR  ARRESTS  EMPLOY  METHUSE  \
+0     3        1         7    1        1        1        0       3        2   
+
+   PSYPROB  ...  TRNQFLG  BARBFLG  SEDHPFLG  INHFLG  OTCFLG  OTHERFLG  \
+0        1  ...        0        0         0       0       0         0   
+
+   DIVISION  REGION  IDU  ALCDRUG  
+0         2       1    0        2  
+
+[1 rows x 69 columns]
+# Visualize Measures of Central Tendency
+plt.figure(figsize=(20, 10)) 
+plt.plot(mean, label="Mean", marker="o")
+plt.plot(median, label="Median", marker="o") 
+plt.plot(mode.iloc[0], label="Mode", marker="o") 
+plt.title("Measures of Central Tendency") 
+plt.legend() 
+plt.xticks(rotation=45) 
+plt.show()
+
+# Visualize Measures of Central Tendency
+# plt.figure(figsize=(20, 10)) 
+# plt.plot(mean, label="Mean", marker="o")
+# plt.plot(median, label="Median", marker="o") 
+# plt.plot(mode.iloc[0], label="Mode", marker="o") 
+# plt.title("Measures of Central Tendency") 
+# plt.legend() 
+# plt.show() 
+The provided line plot visualization illustrates the measures of central tendency (mean, median, and mode) for various variables in my dataset, showing how they compare across these variables. For many variables, the mean, median, and mode are close to each other, indicating symmetric distributions, while notable differences for some variables suggest skewness. For instance, EDUC shows a roughly symmetric distribution with the mean, median, and mode around 3, whereas SERVICES and LOS exhibit positive skewness with higher means compared to medians and modes. Binary variables like METHUSE and PSYPROB reflect their binary nature with means and medians close to 0 or 1, and modes often at 0. Discrepancies between the measures for some variables indicate significant skewness and the presence of extreme values or outliers. Overall, the visualization provides a clear overview of the central tendency measures for each variable, highlighting the symmetry, skewness, and potential outliers in the dataset.
+
+Measures of Dispersion
+Dispersion measures, such as the range, variance, standard deviation, and interquartile range (IQR), are used to describe the spread or variability of data in a dataset. The range is the difference between the maximum and minimum values, providing a simple measure of spread. The variance and standard deviation quantify the average squared deviation of data points from the mean, with the standard deviation being the square root of the variance. The IQR is the range of values within the middle 50% of the dataset, providing a robust measure of spread that is less sensitive to extreme values.
+
+# Measures of Dispersion
+std_deviation = data.std() 
+variance = data.var() 
+range = data.max() - data.min() 
+iqr = stats.iqr(data) 
+
+print(f"\nStandard Deviation: {std_deviation}") 
+print(f"Variance: {variance}") 
+print(f"Range: {range}") 
+print(f"IQR: {iqr}") 
+Standard Deviation: EDUC        0.940180
+MARSTAT     1.210695
+SERVICES    1.951121
+LOS         2.396274
+PSOURCE     2.615543
+              ...   
+OTHERFLG    0.181230
+DIVISION    2.594764
+REGION      1.148536
+IDU         0.422173
+ALCDRUG     0.837784
+Length: 69, dtype: float64
+Variance: EDUC        0.883939
+MARSTAT     1.465782
+SERVICES    3.806874
+LOS         5.742130
+PSOURCE     6.841064
+              ...   
+OTHERFLG    0.032844
+DIVISION    6.732800
+REGION      1.319134
+IDU         0.178230
+ALCDRUG     0.701881
+Length: 69, dtype: float64
+Range: EDUC        4
+MARSTAT     4
+SERVICES    7
+LOS         7
+PSOURCE     6
+           ..
+OTHERFLG    1
+DIVISION    9
+REGION      4
+IDU         1
+ALCDRUG     3
+Length: 69, dtype: int64
+IQR: 2.0
+# Visualize Measures of Dispersion
+plt.figure(figsize=(20, 10)) 
+plt.plot(std_deviation, label="Standard Deviation", marker="o") 
+plt.plot(variance, label="Variance", marker="o") 
+plt.plot(range, label="Range", marker="o") 
+plt.plot(iqr, label="IQR", marker="o") 
+plt.title("Measures of Dispersion") 
+plt.legend() 
+plt.xticks(rotation=45)
+plt.show()
+
+# Visualize Measures of Dispersion
+# plt.figure(figsize=(20, 10)) 
+# plt.plot(std_deviation, label="Standard Deviation", marker="o") 
+# plt.plot(variance, label="Variance", marker="o") 
+# plt.plot(range, label="Range", marker="o") 
+# plt.plot(iqr, label="IQR", marker="o") 
+# plt.title("Measures of Dispersion") 
+# plt.legend() 
+# plt.show() 
+The provided line plot visualization illustrates the measures of dispersion (standard deviation, variance, range, and interquartile range) for various variables in my dataset. The standard deviation and variance measures follow similar patterns, reflecting the spread of the data around the mean, with variables like SERVICES and LOS showing high values, indicating a wide spread. The range highlights the difference between the maximum and minimum values, with some variables, such as SERVICES and LOS, having high ranges, reflecting a wide spread of values. The interquartile range (IQR) varies significantly for some variables, indicating the presence of outliers and skewed distributions. Notably, some variables exhibit extreme values in their dispersion measures, such as a variance spike around 35, indicating extreme variability. Binary variables like IDU and drug use flags have low dispersion measures, as their values are confined to a small range. Overall, the visualization provides a comprehensive overview of the dataset's variability, highlighting the spread and consistency of each variable and identifying areas with significant variability or outliers.
+
+Shape of the Distribution
+The shape of a distribution refers to its overall pattern or form, such as symmetry, skewness, or modality. Symmetric distributions are mirror images around the center, with equal tails on both sides. Skewed distributions have a longer tail on one side, indicating an imbalance in the data. Bimodal distributions have two distinct peaks, while multimodal distributions have multiple peaks. Understanding the shape of a distribution is crucial for interpreting the data and selecting appropriate statistical analyses.
+
+# Shape of the Distribution
+skewness = data.skew() 
+kurtosis = data.kurt() 
+
+print(f"\nSkewness: {skewness}") 
+print(f"Kurtosis: {kurtosis}")
+Skewness: EDUC        0.192350
+MARSTAT     1.110967
+SERVICES   -0.981715
+LOS         0.858889
+PSOURCE     0.527860
+              ...   
+OTHERFLG    5.142635
+DIVISION    0.306263
+REGION      0.026852
+IDU         1.269141
+ALCDRUG    -0.627641
+Length: 69, dtype: float64
+Kurtosis: EDUC        -0.173969
+MARSTAT      0.305134
+SERVICES    -0.502578
+LOS         -0.782654
+PSOURCE     -1.564304
+              ...    
+OTHERFLG    24.446706
+DIVISION    -1.179058
+REGION      -1.424036
+IDU         -0.389282
+ALCDRUG     -0.032413
+Length: 69, dtype: float64
+# Visualize Shape of the Distribution
+plt.figure(figsize=(20, 10)) 
+plt.plot(skewness, label="Skewness", marker="o") 
+plt.plot(kurtosis, label="Kurtosis", marker="o") 
+plt.title("Shape of the Distribution")
+plt.legend()
+plt.xticks(rotation=45)
+plt.show()
+
+# Visualize Shape of the Distribution
+# plt.figure(figsize=(20, 10)) 
+# plt.plot(skewness, label="Skewness", marker="o") 
+# plt.plot(kurtosis, label="Kurtosis", marker="o") 
+# plt.title("Shape of the Distribution")
+# plt.legend()
+# plt.show()
+The provided line plot visualization illustrates the shape of the distribution for various variables in my dataset, represented by skewness and kurtosis. Most variables have skewness close to zero, indicating relatively symmetric distributions, although some, like MARSTAT and IDU, show higher skewness, suggesting asymmetry. Similarly, kurtosis values are close to zero or negative for most variables, indicating relatively flat distributions, with the notable exception of OTHERFLG, which has an extremely high kurtosis value around 3000, indicating significant outliers or a very peaked distribution. This visualization highlights the overall symmetry and peakedness of the dataset's variables, with most showing normal-like distributions, and clearly identifies variables with significant outliers or extreme values.
+
+Frequency Distribution
+Frequency of distribution refers to how often values occur in a dataset and is essential for understanding the data's patterns and characteristics. A frequency distribution table summarizes the number of occurrences of each value or range of values in a dataset, providing insights into the data's distribution and variability. Frequency distributions can be displayed using histograms, bar charts, or frequency tables, making it easier to visualize and interpret the data.
+
+# Frequency Distribution
+print("\nFrequency Distribution:")
+print(data.value_counts())
+Frequency Distribution:
+EDUC  MARSTAT  SERVICES  LOS  PSOURCE  NOPRIOR  ARRESTS  EMPLOY  METHUSE  PSYPROB  PREG  GENDER  VET  LIVARAG  DAYWAIT  SERVICES_D  REASON  EMPLOY_D  LIVARAG_D  ARRESTS_D  DSMCRIT  AGE  RACE  ETHNIC  PRIMINC  SUB1  SUB2  SUB3  SUB1_D  SUB2_D  SUB3_D  ROUTE1  ROUTE2  ROUTE3  FREQ1  FREQ2  FREQ3  FREQ1_D  FREQ2_D  FREQ3_D  FRSTUSE1  FRSTUSE2  FRSTUSE3  HLTHINS  PRIMPAY  FREQ_ATND_SELF_HELP  FREQ_ATND_SELF_HELP_D  ALCFLG  COKEFLG  MARFLG  HERFLG  METHFLG  OPSYNFLG  PCPFLG  HALLFLG  MTHAMFLG  AMPHFLG  STIMFLG  BENZFLG  TRNQFLG  BARBFLG  SEDHPFLG  INHFLG  OTCFLG  OTHERFLG  DIVISION  REGION  IDU  ALCDRUG
+2     0        7         1    1        1        0        0       2        2        2     1       2    1        0        7           1       0         1          0          5        6    5     4       4        0     1     1     0       1       1       0       0       0       1      1      1      1        1        1        3         3         3          2       4        3                    3                      0       0        0       0       0        0         0       0        0         0        0        0        0        0        0         0       0       0         8         4       0    0          521
+                                       0        0        0       2        2        2     1       2    1        0        7           1       0         1          0          5        5    5     4       4        0     1     1     0       1       1       0       0       0       1      1      1      1        1        1        3         3         3          2       4        3                    3                      0       0        0       0       0        0         0       0        0         0        0        0        0        0        0         0       0       0         8         4       0    0          474
+                                                                                                                                                                                     6    5     4       4        0     1     1     0       1       1       0       0       0       1      1      1      1        1        1        3         3         3          2       4        3                    3                      0       0        0       0       0        0         0       0        0         0        0        0        0        0        0         0       0       0         8         4       0    0          458
+3     0        2         1    1        0        0        4       2        1        2     1       2    1        0        2           1       0         1          0          4        10   4     4       5        1     1     1     0       1       1       1       0       0       3      1      1      1        1        1        4         3         3         -9       1        3                    5                      1       0        0       0       0        0         0       0        0         0        0        0        0        0        0         0       0       0         2         1       0    1          429
+2     0        7         1    1        1        0        0       2        2        2     1       2    1        0        7           1       0         1          0          5        5    5     4       4        0     1     1     0       1       1       0       0       0       1      1      1      1        1        1        3         3         3          2       4        3                    3                      0       0        0       0       0        0         0       0        0         0        0        0        0        0        0         0       0       0         8         4       0    0          428
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ... 
+3     0        2         1    6        0        0        4       2        1        2     1       2    3        0        2           1       0         1          0          5        5    5     4       4        0     0     1     0       1       1       4       4       1       3      2      2      1        1        1        5         3         3         -9       1        3                    1                      0       1        0       1       0        0         0       0        0         0        0        1        0        0        0         0       0       0         2         1       1    2            1
+                                                                                                                                                                                                                                                                           0       3      2      1      1        1        1        4         6         3         -9       1        3                    1                      0       0        0       1       0        0         0       0        1         0        0        0        0        0        0         0       0       0         2         1       1    2            1
+                                                                                                                                                                                                                                                                   2       1       3      2      1      1        1        1        4         4         5         -9       1        3                    1                      0       1        0       1       0        0         0       0        0         0        0        1        0        0        0         0       0       0         2         1       1    2            1
+                                                                                                                                                                                                                                                                           0       3      3      1      1        1        1        5         2         3         -9       1        3                    1                      0       0        1       1       0        0         0       0        0         0        0        0        0        0        0         0       0       0         2         1       1    2            1
+5     4        8         8    6        1        0        1       1        2        2     2       2    3        1        8           0       1         3          0          12       9    5     4       1        0     1     1     0       1       1       4       0       0       3      1      1      1        1        1        7         3         3         -9       4        1                    4                      0       0        0       1       0        0         0       0        0         0        0        0        0        0        0         0       0       0         2         1       1    2            1
+Name: count, Length: 5711258, dtype: int64
+The frequency distribution table summarizes the occurrence counts for various combinations of categorical and binary variables in my dataset. Notably, the most common profiles include combinations such as EDUC=2, MARSTAT=0, SERVICES=7, LOS=1, PSOURCE=1, NOPRIOR=1, ARRESTS=0, EMPLOY=0, METHUSE=2, and PSYPROB=2, with specific variables consistently showing up together in the most frequent profiles. For instance, the combination EDUC=2, MARSTAT=0, SERVICES=7, LOS=1, PSOURCE=1, NOPRIOR=1, ARRESTS=0, EMPLOY=0, METHUSE=2, and PSYPROB=2 appears multiple times with slightly varying counts, suggesting common demographic and treatment patterns. Variables like IDU and ALCDRUG show binary distributions, typically centered around 0, indicating that non-intravenous drug use and alcohol-related issues are less frequent in the dataset. The table effectively highlights the most common profiles and the interplay between different categorical and binary variables in the dataset.
+
+Correlation Analysis and Human Language
+The blocks of code below (reason 1, reason 2, reason 3, reason 4, and reason 5) is a series of if-else statements that checks the value of the variable reason1 and assigns a corresponding reason based on the value. The reasons are then printed in human-readable language to explain the correlation between the variables. This approach provides a structured and interpretable way to analyze correlations and present the results in a clear and understandable format. By assigning specific reasons to each correlation, the analysis becomes more accessible to non-technical audiences, enabling stakeholders to grasp the relationships between variables and make informed decisions based on the findings.
+
 ## CONCLUSIONS
 
 In our study of predicting drug addiction rehab success, we have found that neural networks excel at forecasting outcomes in drug rehabilitation programs. These models are adept at handling the myriad complex variables that influence an individual's ability to complete drug addiction recovery treatment. Factors such as personal history, socio-economic background, and psychological conditions, which traditionally complicate predictions, are effectively managed by neural networks, leading to more accurate forecasts.
