@@ -248,6 +248,102 @@ In discussions with House of Hope, it was decided that using filters might mitig
 
 Filters were created for each of the variables in the dataset: MARSTAT", "EMPLOY", "LIVARAG", "DAYWAIT", "SERVICES", "FRSTUSE1", "FREQ_ATND_SELF_HELP_D", "PRIMPAY", "DIVISION", "PREG", "METHUSE". A filtered data set was created with selection of values from each variable to investigate whether there was a significant change in the correlation coeffients in the new data set to justify the use of filters.
 
+Gradient Boosting Classifier
+Gradient Boosting Classifier (GBC) is a powerful machine learning algorithm that combines the predictions of several base estimators to improve robustness over a single estimator. This technique is part of ensemble learning, where multiple models are trained and combined to solve complex problems and improve the accuracy and performance of the model. Here's a detailed overview to help you grasp the concept better.
+
+## Key Concepts of Gradient Boosting Classifier
+
+**Ensemble Learning:**
+
+**Boosting:** A sequential process where each new model attempts to correct the errors made by the previous models.
+
+**Base Estimators:** Weak learners, often decision trees, that are combined to form a strong predictor.
+
+**Gradient Descent:**
+
+**Loss Function:** Measures the difference between the predicted and actual values. Common loss functions include Mean Squared Error for regression and Logarithmic Loss for classification.
+
+**Gradient Descent Optimization:** Minimizes the loss function by iteratively updating the model parameters in the direction that reduces the error.
+
+**Boosting Steps:**
+
+**Initialization:** Start with an initial model, often a simple one like the mean of the target values.
+
+**Iteration:** At each step, fit a new model to the residuals (errors) of the current model and update the model by adding this new model.
+
+**Combination:** Combine the models to make the final prediction. Each model’s contribution is weighted by its performance.
+
+**Building and Training a Gradient Boosting Classifier**
+
+Import Libraries
+
+python
+
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+Step 2: Load and Preprocess the Data
+
+python
+
+**Load the dataset**
+data = pd.read_csv('data.csv')
+
+**Separate features and target**
+X = data.drop('target', axis=1)
+y = data['target']
+
+**Train-test split**
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+**Standardize the features**
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+Step 3: Initialize and Train the Gradient Boosting Classifier
+
+python
+
+**Initialize the Gradient Boosting Classifier**
+
+gbc = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+
+**Train the model**
+gbc.fit(X_train, y_train)
+Step 4: Evaluate the Model
+
+python
+
+**Make predictions**
+
+y_pred = gbc.predict(X_test)
+
+**Evaluate the model**
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+
+**Explanation of the Code**
+
+**Data Preprocessing:** The dataset is loaded and split into training and testing sets. Features are standardized using StandardScaler.
+
+**GBC Initialization:** A GradientBoostingClassifier is initialized with 100 estimators, a learning rate of 0.1, and a maximum depth of 3.
+
+**Training:** The model is trained on the training data using the fit method.
+
+**Evaluation:** The model's performance is evaluated on the test data using a confusion matrix and classification report.
+
+**Key Points to Remember**
+
+**Hyperparameters:** Gradient Boosting has several hyperparameters (e.g., number of estimators, learning rate, max depth) that significantly affect its performance. Tuning these hyperparameters is crucial.
+
+**Overfitting:** Gradient Boosting can overfit if the number of estimators is too high or if the trees are too deep. Techniques like cross-validation and early stopping can help prevent overfitting.
+
+**Computational Cost:** Training Gradient Boosting models can be computationally expensive. Efficient use of resources and optimization techniques is essential.
+Gradient Boosting Classifiers are powerful models for various tasks, from binary classification to multi-class classification problems. Understanding the structure and training process is crucial for effectively applying and tuning these models.
+
 ## MULTI-LEVEL PERCEPTRON (MLP) MODEL
 
 Understanding the Multilayer Perceptron (MLP) model is fundamental in neural networks and deep learning. MLP is a type of artificial neural network (ANN) that consists of multiple layers of nodes (neurons) with each layer fully connected to the next one. Here's a detailed overview to help you grasp the concept better.
