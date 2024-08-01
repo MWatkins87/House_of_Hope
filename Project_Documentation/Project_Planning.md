@@ -99,8 +99,9 @@ Communications, SAMHSA, U.S. Department of Health and Human Services.
 ## Model Evaluation
 
 - Multi-Layer Perceptron (MLP)
-- Gradient Boosting Machines (GBMs) with Neural Network Backbones:
-- Model 3
+- Gradient Boosting Machines (GBMs) with Neural Network Backbones: TensorFlow / Keras
+- TensFlow / Keras
+- PyTorch
 
 ## Model Optimization
 
